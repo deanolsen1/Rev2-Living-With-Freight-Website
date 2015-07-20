@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><!--		
+	 -->
+  <head>
+    <title>Timeline Memphis TN</title>
+    <meta charset="utf-8">
+    <meta name="description" content="TimelineJS example">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Style-->
+    <style>
+      html, body {
+       height:100%;
+       padding: 10px;
+       margin: 0px;
+       
+      }
+      *{
+ 	 -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+	  box-sizing: border-box;
+	}
+	
+	
+	
+
+    </style>
+    <script src="js/d3.v3.min.js"></script>
+    <script type="text/javascript" src="js/storyjs-embed.js"></script>
+   
+    <!-- HTML5 shim, for IE6-8 support of HTML elements--><!--[if lt IE 9]>
+    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  </head>
+  <body>
+      <!-- BEGIN Timeline Embed -->
+      
+      <div id="timeline-embed"></div>
+     
+		
+		<script type="text/javascript">
+			var dataObject;
+			var dataset = [];
+			d3.csv("data/help.csv", function(data) {
+				populateTimeline(data); 
+			});
+
+			function populateTimeline(data){
+				for(var c=0; c<data.length; c++){
+					var row = data[c];
+					dataset.push({
+						startDate: row.StartDate, 
+						endDate: row.EndDate,
+						text: row.Text,
+						headline: row.Headline, 
+						tag: row.Type, 
+						asset: {
+							media: row.Media
+							}, 
+						author:row.Author, 
+						instit: row.Institution, 
+						geo: row.states
+					});
+					//console.log(dataset); 
+				}
+			}
+			
+			var dataObject = {
+					timeline: {
+						headline:"Lamar Avenue Timeline",
+						type:"default",
+						text:"<p>Memphis, TN</p>",
+						asset: {
+							media:"img/LamarAve.jpg",
+							
+						},
+						"date": dataset
+					}
+				}
+		
+			var timeline = createStoryJS({
+				type: 'timeline',
+				embed_id: "timeline-embed",
+				 width: "100%",
+			 height: "100%",
+			 start_zoom_adjust: 0,
+			 start_at_slide: 0,
+			 source: dataObject
+			});
+			
+			
+			
+		
+      </script>
+       
+      <!-- END Timeline Embed-->
+  </body>
+</html>

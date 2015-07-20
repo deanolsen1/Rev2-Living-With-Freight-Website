@@ -1,0 +1,4604 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Lamar Corridor and Greater Memphis Interactive Map</title>
+
+        <!-- Core CSS -->
+        <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/typeahead.js/typeahead.js-bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="css/leaflet.css" rel="stylesheet" type="text/css">
+
+        <!-- Custom styles for this template -->
+        <style>
+            html, body{
+                height: 100%;
+                margin: 0px;
+            }
+            body {
+                padding-top: 50px;
+            }
+            label {
+                font-weight: normal;
+            }
+            #sidebarAndMap{
+                height:100%;
+               
+            }
+            #sidebar, #container {
+                height: 100%;
+                margin: 0px;
+            }
+            
+            .table {
+                margin-bottom: 0px;
+            }
+
+            #map {
+                height: 100%;
+                margin: 0px;
+                -webkit-box-shadow: 0 -1px 10px rgba(0,0,0,0.5);
+                -moz-box-shadow: 0 -1px 10px rgba(0,0,0,0.5);
+                box-shadow: 0 -1px 10px rgba(0,0,0,0.5);
+            }
+    
+            .info {
+                padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                
+                background: rgba(122,122,122,0.8);
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+            .info h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+            .legend {
+                text-align: left;
+                line-height: 18px;
+                color: #555;
+                background-color: white; 
+            }
+            .legend i {
+                width: 18px;
+                height: 18px;
+                float: left;
+                margin-right: 8px;
+                opacity: 0.7;
+			}
+
+			.BikeScoreInfo {
+                padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+            .BikeScoreInfo h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+	
+			.Neighborhoods{
+				 padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.Neighborhoods h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+			.weightedEPApollutersVarInfo {
+			padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.weightedEPApollutersVarInfo h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+	
+			.Respiratory {
+			padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.Respiratory h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+			.Cancer_Risk { 
+				padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.Cancer_Risk h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+			.demographicsInfo2 { 
+				padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.demographicsInfo2 h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+			.FoodAtlas5 { 
+				padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.FoodAtlas5h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+			.demographicsInfo1 { 
+				padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.demographicsInfo1 h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+			.demographicsInfo3 { 
+				padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.demographicsInfo3 h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+			.demographicsInfo4 { 
+				padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.demographicsInfo4 h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+			.smartLocationDatabase1Info { 
+				
+				padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.smartLocationDatabase1Info  h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+			.FoodAtlas2 { 
+				padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.FoodAtlas2  h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+			.FoodAtlas3 { 
+				padding: 6px 8px;
+                font: 14px/16px Arial, Helvetica, sans-serif;
+                background: white;
+                box-shadow: 0 0 15px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }
+			.FoodAtlas3  h4 {
+                margin: 0 0 5px;
+                color: #777;
+            }
+
+            #loading {
+                position: absolute;
+                width: 220px;
+                height: 19px;
+                top: 50%;
+                left: 50%;
+                margin: -10px 0 0 -110px;
+                z-index: 20001;
+            }
+            .navbar .navbar-brand {
+                font-weight: bold;
+                font-size: 22px;
+                color: white;
+                white-space: nowrap;
+                
+            }
+            .navbar {
+            	  background-color: #2f2f2f;
+            }
+            .navbar-collapse.in {
+                overflow-y: hidden;
+            }
+            .tt-dropdown-menu {
+                overflow: auto;
+            }
+            .tt-hint, .tt-query {
+                display: block;
+                width: 100%;
+                height: 34px;
+                padding: 6px 12px;
+                font-size: 14px;
+                border-radius: 4px;
+            }
+            .typeahead-header {
+                margin: 0 5px 5px 5px;
+                padding: 3px 0;
+                border-bottom: 1px solid #ccc;
+            }
+            .search-container {
+                width: 250px;
+            }
+            #searchbox {
+                -webkit-border-top-left-radius: 4px;
+                -webkit-border-bottom-left-radius: 4px;
+                -moz-border-top-left-radius: 4px;
+                -moz-border-bottom-left-radius: 4px;
+                border-top-left-radius: 4px;
+                border-bottom-left-radius: 4px;
+            }
+            .leaflet-popup-content {
+                margin-top: 5px;
+                margin-bottom: 5px;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+            .leaflet-popup-content-wrapper {
+                border-radius: 5px;
+            }
+            .panel-heading a:hover {
+                text-decoration: none;
+            }
+            @media (max-width: 992px) {
+                .navbar .navbar-brand {
+                    font-size: 18px;
+                    float: left;
+                   
+                }
+                .search-container {
+                    width: 150px;
+                }
+                .leaflet-control-attribution {
+                    display: none;
+                }
+            }
+            @media (max-width: 767px){
+                .search-container {
+                    width: 100%;
+                }
+            }
+            /* Print Handling */
+            @media print {
+                .navbar, .toggle, #sidebar {
+                    display: none !important;
+                   
+                }
+            }
+        </style>
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle btn" data-toggle="collapse" data-target=".navbar-collapse" style="height: 34px; padding: 5px 10px; margin-right: 10px;"><i class="fa fa-ellipsis-v" style="color: white"></i></button>
+                <button id="toggle" type="button" class="navbar-toggle btn" style="height: 34px; padding: 5px 10px; margin-right: 10px;"><i id="toggleIcon" class="fa fa-check-square-o" style="color: white"></i></button>
+                <a class="navbar-brand" href="#">Lamar Corridor</a>
+            </div>
+            <div class="navbar-collapse collapse" id="navbar-collapse">
+                 <form class="navbar-form navbar-right">
+                    <div class="links-565">
+						<button  type="image" id="reset" class="btn reset btn btn-primary" >Reset Map</button>
+                        <a href="img/infographic.png" target="_blank"> 
+                            <img src="img/infographicButton2.png" alt="Infographic Button" height="40px">
+                        </a>
+                        <a href="timeline.htm" target="_blank"> 
+                            <img src="img/timelineButton2.png" alt="Timeline Button"height="40px">
+                        </a>
+                        <a href="data/statistics.pdf" target="_blank"> 
+                            <img src="img/statisticsButton2.png" alt="Statistics Button"height="40px">
+                        </a> 
+                        <a href="data/paperPDF.pdf" target="_blank"> 
+                            <img src="img/paperButton2.png" alt="Project Paper Button" height="40px">
+                        </a>
+                        <a href="img/LamarAvenue-Map_Zoning_Schools.png" target="_blank"> 
+                            <img src="img/mapGalleryButton2.png" alt="Map Gallery Button" height="40px">
+                        </a>                        
+                        <a href="data/Attributions.pdf" target="_blank"> 
+                            <img src="img/attributionsButton2.png" alt="Attributions Button" height="40px">
+                        </a>
+                                                                    
+                    </div>
+                </form>
+            </div><!--/.navbar-collapse -->
+        </div>
+
+        <div id="sidebarAndMap">
+
+            <!--container begins here-->
+            <div class="row" id="container">
+                <div class="col-sm-3 col-lg-3" id="sidebar" style="padding: 10px; overflow: auto;">
+                    
+
+                    <div class="tab-content" style="padding-top: 10px;">
+                        <div class="tab-pane active" id="layers">
+                            <div class="panel-group">
+
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers2">
+                                           Business Vacancies
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers2" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap">
+                                                    Historical Map
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap2">
+                                                    Historical Map 1922
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap3">
+                                                    Historical Map 1964
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap5">
+                                                    Historical Map 1936
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+ 
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers2">
+                                           Residential Vacancies
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers2" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap">
+                                                    Historical Map
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap2">
+                                                    Historical Map 1922
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap3">
+                                                    Historical Map 1964
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap5">
+                                                    Historical Map 1936
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers2">
+                                           Synthetic Analyses
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers2" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap">
+                                                    Historical Map
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap2">
+                                                    Historical Map 1922
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap3">
+                                                    Historical Map 1964
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap5">
+                                                    Historical Map 1936
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers">
+                                           Greenprint
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers" class="panel-collapse collapse in">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="geojson">
+                                                    Bike Score (Bikeability)
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="brownfields">
+                                                  	Brownfields (Downtown Memphis)
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="alterFuel" >
+                                                    Alternative Fuel Stations
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="grocers">
+                                                    Grocers
+                                                </label>
+                                            </div>                                        
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="healthCenters2">
+                                                    Health Centers
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="hospitalsVar">
+                                                    Hospitals
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="parksVar">
+                                                    Parks
+                                                </label>
+                                            </div>           
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="schoolsVar">
+                                                    Schools
+                                                </label>
+                                            </div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+<!--                            <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers2">
+                                           Historical Maps
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers2" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap">
+                                                  	Historical Map
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap2">
+                                                  	Historical Map 1922
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap3">
+                                                  	Historical Map 1964
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="histMap5">
+                                                  	Historical Map 1936
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+ -->                            	 <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers4">
+                                           Noise Maps
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers4" class="panel-collapse collapse ">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="noiseMap">
+                                                  	FAA MEM Noise Map
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="roadNoiseMap">
+                                                  	Road Noise Map 
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers7">
+                                          Pollution
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers7" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div class="checkbox">
+    										<label>
+    											<input type="checkbox" name="overlayLayers" id="weightedEPApollutersVar">
+    											Pollution Density
+    										</label>
+    										</div>
+    										 <div class="checkbox">
+    										<label>
+    											<input type="checkbox" name="overlayLayers" id="locationsFinedByEPAVar">
+    											Locations Fined By EPA: Click on an icon for more information
+    										</label>
+    									</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            	 <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers8">
+                                          Increased Health Risks
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers8" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="NATAdata1Var">
+                                                        Respiratory Risks (EPA NATA 2005 Data)
+                                                    </label>
+                                                </div>  
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="NATAdata2Var">
+                                                        Cancer Risks (EPA NATA 2005 Data)
+                                                    </label>
+                                                </div>
+                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers9">
+                                          Demographics
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers9" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="smartLocationDatabaseVar6">
+                                                    Population Density
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="incomeVar">
+                                                    Income
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="demographicsVar1">
+                                                    Percentage African American
+                                                </label>
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="demographicsVar2">
+                                                    Percentage Hispanic
+                                                </label>      
+                                            </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="demographicsVar3">
+                                                    Percentage Native American
+                                                </label>      
+                                            </div>
+                                             <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" name="overlayLayers" id="demographicsVar4">
+                                                    Percentage Asian American
+                                                </label> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                             <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers10">
+                                          EPA Smart Location Database
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers10" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="smartLocationDatabaseVar1" >
+                                                        Housing Units Per Acre
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="smartLocationDatabaseVar2" >
+                                                        Jobs Per Acre
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="smartLocationDatabaseVar3" >
+                                                        Jobs Per Household
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="smartLocationDatabaseVar4" >
+                                                        Zero Car Households
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="smartLocationDatabaseVar5" >
+                                                        Low Wage Workers (Earning $1250/mo or less)
+                                                    </label>
+                                                </div>
+                                            </div>
+                                                        
+                                        </div>
+                                    </div>
+                                </div>
+                             <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers11">
+                                          USDA Food Atlas
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers11" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="foodAtlasVar2" >
+                                                        Low-Income People with Low Food Access
+                                                        (urban: 1/2 mile, rural: 10 miles)
+                                                    </label>
+                                                </div>           
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="foodAtlasVar3" >
+                                                        Children Age 0-17 with Low Food Access at 1/2 Mile
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="foodAtlasVar4" >
+                                                        Seniors age 65+ with Low Food Access at 1/2 Mile
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="foodAtlasVar5" >
+                                                        Housing units without vehicles, with low food access at 1/2 mile
+                                                    </label>
+                                                </div>                                               
+                                            </div>
+                                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers12">
+                                          Zoning
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers12" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="zoningVar">
+                                                        Memphis Zoning
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers13">
+                                          EPA Monitor Locations
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers13" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="currentEPAMonitorVar">
+                                                        Current EPA Monitor Location
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="proposedEPAMonitorsVar">
+                                                        Proposed EPA Monitor Locations
+                                                    </label>
+                                                </div>                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers14">
+                                          CFIRE Information
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers14" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="neighborhoodsVar">
+                                                        Neighborhoods of Interest
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="lamarAreaFreightFacilitiesVar">
+                                                        Lamar Area Freight Facilities
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="publicWarehousesVar">
+                                                        Public Warehouses
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="proposedIntermodalYardVar">
+                                                        Proposed Intermodal Yard (Collierville: East of Lamar Ave)
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="warehousesVar">
+                                                        Warehouses
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="distributionCentersVar">
+                                                        Distribution Centers
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="freightFacilitiesVar">
+                                                        Freight Facilities
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="truckTerminalsVar">
+                                                        Truck Terminals
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="intermodalTerminalsVar">
+                                                        Intermodal Terminals
+                                                    </label>
+                                                </div>                                                                                                                              
+                                            </div>
+                                        </div>
+                                    </div>                                
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers15">
+                                        Census Tracts
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers15" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="censusTractsVar">
+                                                        Shelby County 2013 Census Tracts
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_" href="#overlay-layers16">
+                                        Transportation
+                                        </a>
+                                    </div>
+                                    <div id="overlay-layers16" class="panel-collapse collapse">
+                                        <div class="panel-body" style="padding: 0px 15px;">
+                                            <div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="railLinesVar">
+                                                        Rail Lines   (NTAD 2013)
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" name="overlayLayers" id="HPMSRoadsVar">
+                                                        Roads   (NTAD 2013: HPMS)
+                                                    </label>
+                                                </div>                                                                                       
+                                            </div>
+                                        </div>
+                                    </div>                                
+                                </div>                            
+                            </div> <!-- panel group div-->
+                        </div>
+                    </div>
+                </div>
+
+                <!--map begins here-->
+                <div class="col-sm-9 col-lg-9" id="map">
+                    <!--
+                    <input type="image" id="reset" class="reset" src="img/resetButton.png" alt="Reset Button">
+                    -->                 
+                </div>
+                <!--map ends here-->
+            </div>
+            <!--container ends here-->
+        <div>
+        <!--sidebarAndMap ends here-->
+
+        <div class="modal fade" id="legendModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Map Legend</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Map Legend goes here...</p>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+       <!--data layers stored as js-->
+
+        <!--Shapefiles stored as GeoJSON files. (These contain all the data for the points, lines, and polygons.)-->
+        <script type="text/javascript" src="data/greenprint_SLD.js"></script>
+        <script type="text/javascript" src="data/shapefile2.js"></script>
+        <script type="text/javascript" src="data/zoning.js"></script>
+        <script type="text/javascript" src="data/neighborhoods.js"></script>
+        <script type="text/javascript" src="data/parks.js"></script>
+        <script type="text/javascript" src="data/shelbyCounty2013CensusTracts.js"></script>
+        <script type="text/javascript" src="data/proposedIntermodalYard.js"></script>
+        <script type="text/javascript" src="data/railLines.js"></script>
+        <script type="text/javascript" src="data/HPMS_Roads_ShelbyCounty.js"></script>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="assets/typeahead.js/typeahead.min.js"></script> <!--https://github.com/twitter/typeahead.js/-->
+        <script type="text/javascript" src="js/leaflet.js"></script>
+
+        <script type="text/javascript">
+
+            var map, boroughSearch = [], theaterSearch = [], museumSearch = [];
+
+            $(document).ready(function() {
+                $("[rel=tooltip]").tooltip();
+                if (document.body.clientWidth <= 767) {
+                    $("#map").css("class", "col-sm-12 col-lg-12");
+                    $("#sidebar").css("display", "none");
+                };
+            });
+            $(window).resize(function() {
+                $(".tt-dropdown-menu").css("max-height", $("#container").height()-$(".navbar").height()-20);
+                if (document.body.clientWidth <= 767) {
+                    $("#map").css("class", "col-sm-12 col-lg-12");
+                    $("#sidebar").css("display", "none");
+                } else {
+                    $("#map").css("class", "col-sm-9 col-lg-9");
+                    $("#sidebar").css("display", "block");
+                };
+            });
+
+            $("#toggle").click(function() {
+                $("#toggle i").toggleClass("fa fa-check-square-o fa fa-map-marker");
+                $("#map").toggleClass("col-sm-9 col-lg-9 col-sm-12 col-lg-12");
+                $("#sidebar").toggle();
+                if (document.body.clientWidth <= 767) {
+                    $("#map").toggle(); 
+                };
+                map.invalidateSize();
+                return false;
+            });
+
+            /////////How to remove basemap layers------------------------------------------------------
+            $("input[name='basemapLayers']").change(function () {
+                // Remove unchecked layers
+                $("input:radio[name='basemapLayers']:not(:checked)").each(function () {
+                    map.removeLayer(window[$(this).attr("id")]);
+                });
+                // Add checked layer
+                $("input:radio[name='basemapLayers']:checked").each(function () {
+                    map.addLayer(window[$(this).attr("id")]);
+                });
+            });
+            ////////End how to remove basemap layers---------------------------------------------------
+
+
+            /////////How to add/remove overlay layers------------------------------------------------------
+            $("input:checkbox[name='overlayLayers']").change(function () {
+                var layers = [];
+                function sortByKey(array, key) {
+                    return array.sort(function (a, b) {
+                        var x = a[key];
+                        var y = b[key];
+                        return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+                    });
+                }
+                if ($("#" + $(this).attr("id")).is(":checked")) {
+                    $("input:checkbox[name='overlayLayers']").each(function () {
+                        // Remove all overlay layers
+                        map.removeLayer(window[$(this).attr("id")]);
+                        if ($("#" + $(this).attr("id")).is(":checked")) {
+                            // Add checked layers to array for sorting
+                            layers.push({
+                                "z-index": $(this).attr("z-index"),
+                                "layer": $(this)
+                            });
+                        }
+                    });
+                    // Sort layers array by z-index
+                    var orderedLayers = sortByKey(layers, "z-index");
+                    // Loop through ordered layers array and add to map in correct order
+                    $.each(orderedLayers, function () {
+                        map.addLayer(window[$(this)[0].layer[0].id]);
+                    });
+                } else {
+                    // Simply remove unchecked layers
+                    map.removeLayer(window[$(this).attr("id")]);
+                    
+                }
+            });
+            /////////End how to add/remove overlay layers--------------------------------------------------
+
+            //personalized vector basemap
+            var mapquestOSM =  L.tileLayer(
+                'https://a.tiles.mapbox.com/v3/eslivi.mh6c63gk/{z}/{x}/{y}.png',
+                {attribution: 'Made with: <a href="http://mapbox.com">TileMill</a> Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+                });
+            
+            //personalized vector basemap
+            // var mapquestOSM =  L.tileLayer(
+	           //  'https://a.tiles.mapbox.com/v3/maira1991.gjkaio59/{z}/{x}/{y}.png',
+            //     {attribution: 'Made with: <a href="http://mapbox.com">TileMill</a> Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors'
+            //     });
+
+            //satellite view basemap
+            var mapquestOAM = L.tileLayer('https://a.tiles.mapbox.com/v3/eslivi.mh6ib7a2/{z}/{x}/{y}.png', {
+                
+            });
+
+            var baseLayers = {
+                "Streets": mapquestOSM,
+                "Imagery": mapquestOAM,
+            };
+
+            //Restrict Bounds
+            var southWest = new L.LatLng(34.787876, -90.3); 
+            var northEast = new L.LatLng(35.326222, -89.4); 
+            var theBounds = new L.LatLngBounds(southWest, northEast);
+
+            map = L.map("map", {
+                zoom: 13,
+                minzoom: 8,
+                maxzoom: 24,
+                maxBounds: theBounds,
+                center: new L.LatLng(35.054, -89.908),
+                layers: [mapquestOSM]
+            });
+
+            function zoomToFeature(e) {
+                map.fitBounds(e.target.getBounds());
+            }               
+
+            function makePercent(inputNum){
+                //catch NaNs
+                if(isNaN(inputNum)){
+                    return "0%";
+                }
+
+                var num = new Number(100 * inputNum);
+                var percentage1;
+                if (num >= 1){
+                    percentage1 = num.toPrecision(2) + "%";
+                } else {
+                    percentage1 = num.toPrecision(1) + "%";
+                }
+                return percentage1;
+            }
+
+            function formatNumber(inputNum){
+                if(isNaN(inputNum)){
+                    return "--";
+                }
+                return inputNum.toFixed(0);
+            }
+
+            function formatNumberTo2(inputNum){
+                if(isNaN(inputNum)){
+                    return "--";
+                }
+                return inputNum.toFixed(2);   
+            } 
+
+            function roundToProperPrecision(number){
+                if (number > 1){
+                    return formatNumber(number - 1);
+                } else {
+                    return (number - .01);
+                }
+            }
+
+            function formatInfoToCorrectPrecision(number){
+                if(number > 1){
+                    return formatNumber(number);
+                } else {
+                    return formatNumberTo2(number);
+                }
+            } 
+
+            function formatLegend(to){
+                if (to > 0){
+                    return "&ndash;" + to;
+                } else if (to == 0) {
+                    return "";
+                } else {
+                    return "+";
+                }
+            }                                                                  
+            
+            //-------------------------------------------------------------
+            //BikeScore Data
+            //geojson == bikescore
+            var geojson = L.geoJson(greenprint_SLD, {
+                style: bikeScoreStyle,
+                onEachFeature: onEachFeature_bikeScore,
+                layer: "bikeScore"
+            });
+
+            function bikeScoreStyle(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_bikeScore(feature.properties.BikeScore_)
+                };
+            }
+
+            function onEachFeature_bikeScore(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_bikeScore,
+                    mouseout: resetHighlight_bikeScore,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_bikeScore(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                bikeScoreInfo.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_bikeScore(e) {
+                geojson.resetStyle(e.target);
+                bikeScoreInfo.update();
+            }                 
+
+            
+            function myGetColor_bikeScore(d) {
+                return d > 80 ? '#2b83ba' :
+                       d > 60  ? '#abdda4' :
+                       d > 40  ? '#ffffbf' :
+                       d > 20  ? '#fdae61' :
+                                 '#d7191c';
+            }       
+
+            // control that shows state info on hover
+            var bikeScoreInfo = L.control({position: 'bottomleft'});
+
+            bikeScoreInfo.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'BikeScoreInfo');
+                this.update();
+                return this._div;
+            };
+
+            bikeScoreInfo.update = function (props) {
+                //this is a test
+                this._div.id = "geojson";
+                this._div.class = "geojsonTest";
+
+                this._div.innerHTML = '<h4>Bike Score</h4>' +  (props ?
+                    '<b>' + formatNumber(props.BikeScore_) + '</b><br />'
+                    : 'Hover over a Tract');
+            };
+
+            //legend
+            var legend = L.control({position: 'bottomright'});
+
+            legend.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [80, 60, 40, 20, 0],
+                    labels = [],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    to = (grades[i - 1] - 1);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_bikeScore(from + 1) + '"></i> ' +
+                        from + (to ? '&ndash;' + to : '&ndash;100'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+		
+			document.getElementById('geojson').onclick = function() {
+        		if (this.className === 'active') {
+        			legend.removeFrom(map);
+        			bikeScoreInfo.removeFrom(map); 
+        			
+        			this.className = '';
+        		} else {
+        			legend.addTo(map);
+        			bikeScoreInfo.addTo(map);
+        			
+        			this.className = 'active';
+        			}
+    		}	
+
+        //------------------------------------------------------------------
+
+          var grocers = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/shoppingCart24px.png",
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 12],
+                            popupAnchor: [0, -25], 
+                            opacity: 0.5
+                        }),
+                        
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                    
+                      
+                        
+                    }
+               
+            });
+            $.getJSON("data/grocers.js", function (data) {
+                grocers.addData(data);
+            });
+			
+			var healthCenters2 = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/plus24px_2.png",
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 12],
+                            popupAnchor: [0, -25], 
+                            opacity: 0.5
+                        }),
+                        
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) {  
+                }
+               
+            });
+            $.getJSON("data/healthCenters.json", function (data) {
+                healthCenters2.addData(data);
+            });
+			
+			
+             var brownfields = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/hexagon-24.png",
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 12],
+                            popupAnchor: [0, -25], 
+                            opacity: 0.5
+                        }),
+                        
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) {  
+                }
+               
+            });             
+            $.getJSON("data/brownfields.json", function (data) {
+                brownfields.addData(data);
+            });
+            
+            //alternative fuel
+            var alterFuel = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/wind-turbine-24.png",
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 12],
+                            popupAnchor: [0, -25], 
+                            opacity: 0.5
+                        }),
+                        
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                    }
+               
+            });
+            $.getJSON("data/alternative_fuel_stations.json", function (data) {
+                alterFuel.addData(data);
+            });
+
+            var hospitalsVar = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/H_24px.png",
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 12],
+                            popupAnchor: [0, -25], 
+                            opacity: 0.5
+                        }),
+                        
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+   
+                    }
+               
+            });
+            $.getJSON("data/hospital.js", function (data) {
+                hospitalsVar.addData(data);
+            });
+
+            //-------------------------------------------------------------
+            //Parks
+            var parksVar = L.geoJson(parks, {
+                style: parksStyle,
+                onEachFeature: onEachFeature_parksVar
+            });
+
+            function parksStyle(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'brown',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: '#00b454'
+                };
+            }
+
+            function onEachFeature_parksVar(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_parksVar,
+                    mouseout: resetHighlight_parksVar,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_parksVar(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                parksInfo.update(layer.feature.properties);  
+            }
+
+            function resetHighlight_parksVar(e) {
+
+                parksVar.resetStyle(e.target);
+                parksInfo.update();
+            }            
+
+            // control that shows state info on hover
+            var parksInfo = L.control({position: 'bottomleft'});
+
+            parksInfo.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'Neighborhoods');
+                this.update();
+                return this._div;
+            };
+
+            parksInfo.update = function (props) {
+                this._div.innerHTML = '<h4>Parks</h4>' +  (props ?
+                    '<b>' + props.NAME + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            document.getElementById('parksVar').onclick = function() {
+                if (this.className === 'active') {
+                    parksInfo.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    parksInfo.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+            
+            //schools
+            var schoolsVar = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/school24px.png",
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 12],
+                            popupAnchor: [0, -25], 
+                            opacity: 0.5
+                        }),
+                        
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) { 
+                }
+               
+            });
+            $.getJSON("data/school.js", function (data) {
+                schoolsVar.addData(data);
+            });
+           
+
+           
+           ///////-----------------------------------------------------------------
+           ///////__________POLLUTION____________
+           ///////-----------------------------------------------------------------
+            var weightedEPApollutersVar = L.geoJson(shapefile2, {
+                style: weightedEPApollutersStyle,
+                onEachFeature: onEachFeature_weightedEPApollutersVar
+            });
+
+            function weightedEPApollutersStyle(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_weightedEPApolluters((feature.properties.Join_Count)/(feature.properties.Area_EPA))
+                };
+            }
+
+            function onEachFeature_weightedEPApollutersVar(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature_weightedEPApollutersVar,
+                        mouseout: resetHighlight_weightedEPApollutersVar,
+                        click: zoomToFeature
+                    });
+                }
+
+            function highlightFeature_weightedEPApollutersVar(e) {
+                    var layer = e.target;
+
+                    layer.setStyle({
+                        weight: 5,
+                        color: '#f00',
+                        dashArray: '',
+                        fillOpacity: 0.7
+                    });
+
+                    if (!L.Browser.ie && !L.Browser.opera) {
+                        layer.bringToFront();
+                    }
+                    
+                    weightedEPApollutersVarInfo.update(layer.feature.properties); 
+
+            }
+
+            function resetHighlight_weightedEPApollutersVar(e) {
+
+                weightedEPApollutersVar.resetStyle(e.target);
+                weightedEPApollutersVarInfo.update();
+            } 
+
+            
+            function myGetColor_weightedEPApolluters(d) {
+                return d > 134100  ? '#99000d' :
+                       d > 19040  ? '#ef3b2c' :
+                                    '#fcbba1';
+            }  
+
+            // control that shows state info on hover
+            var weightedEPApollutersVarInfo = L.control({position: 'bottomleft'});
+
+            weightedEPApollutersVarInfo.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'weightedEPApollutersVarInfo');
+                this.update();
+                return this._div;
+            };
+
+            weightedEPApollutersVarInfo.update = function (props) {
+                this._div.innerHTML = '<h4>Pollution Density</h4>' +  (props ?
+                    '<b>Pollution Density Rank: ' + getPollutionDensityRank((props.Join_Count)/(props.Area_EPA)) + '<br />' + props.NAMELSAD10 + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            function getPollutionDensityRank(pollutionDensityNumber){
+                return pollutionDensityNumber > 134100  ? 'Highest' :
+                       pollutionDensityNumber > 19040  ? 'High' :
+                                    'Medium';
+            }
+
+            //legend
+            var weightedEPApollutersLegend = L.control({position: 'bottomright'});
+
+            weightedEPApollutersLegend.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [1341000, 19040, 0],
+                    ranking = ['Highest', 'High', 'Medium'],                   
+                    labels = [],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    rank = ranking[i];                    
+                    to = grades[i + 1];
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_weightedEPApolluters(from + 1) + '"></i> ' + rank);
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('weightedEPApollutersVar').onclick = function() {
+                if (this.className === 'active') {
+                    weightedEPApollutersLegend.removeFrom(map);
+                    weightedEPApollutersVarInfo.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    weightedEPApollutersLegend.addTo(map);
+                    weightedEPApollutersVarInfo.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                } 
+
+            ///////-----------------------------------------------------------------
+            //Locations Fined By EPA
+            //Version 1.0: The GeoJSON File here creates the error "Error: Invalid GeoJSON Object" (?)
+            //Something about polyline contains a point...
+            //(Known Bug: Will be fixed in version 1.1.)            
+
+             var locationsFinedByEPAVar = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/caution22px.png",
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 28],
+                            popupAnchor: [0, -25], 
+                            opacity: 0.5
+                        }),
+                        
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                    cleanupCostVar = layer.feature.properties.CleanupCost;
+
+                    var popUpInfo = "<p style='font-family:arial;color:black;font-size:16px;''> "+ layer.feature.properties.Name + "</p>"+
+                    " <p style='font-family:arial;color:red;font-size:14px;font-weight:bold;''> Fine By EPA: "+ 
+                    layer.feature.properties.PenaltiesAndFines + "</p>";
+
+                    if (cleanupCostVar != ""){
+                        popUpInfo += " <p style='font-family:arial;color:red;font-size:14px;font-weight:bold;''> " +
+                        "Cleanup Cost: " + layer.feature.properties.CleanupCost + "</p>";
+                    }
+
+                    if(feature.properties && feature.properties.popUpInfo){
+                      popUpInfo += feature.properties.popUpInfo;
+                    }
+                    layer.bindPopup(popUpInfo);      
+                }
+               
+            });
+            $.getJSON("data/finedByEPA.js", function (data) {
+                locationsFinedByEPAVar.addData(data);
+            });            
+
+//---------------------------------------------------------------------------
+            ///////-----------------------------------------------------------------
+            ///////Increased Health Risks/EPA NATA Data
+            ///////-----------------------------------------------------------------
+            function getNATARank(nataNumber){
+                return  nataNumber > 12  ? 'Greatest Risk' :
+                        nataNumber > 11  ? 'Greatly Increased Risk' :
+                        nataNumber > 10  ? 'Increased Risk' :                       
+                                  'Least Risk';
+            }
+
+            //
+            var NATAdata1Var = L.geoJson(shapefile2, {
+                style: NATArisk1Style,
+                onEachFeature: onEachFeature_NATAdata1Var
+            });
+
+            function NATArisk1Style(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.5,
+                    fillColor: myGetColor_NATAdata1(feature.properties.NewResp)
+
+                };
+            }  
+
+            function onEachFeature_NATAdata1Var(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature_NATAdata1Var,
+                        mouseout: resetHighlight_NATAdata1Var,
+                        click: zoomToFeature
+                    });
+                }
+
+            function highlightFeature_NATAdata1Var(e) {
+                    var layer = e.target;
+
+                    layer.setStyle({
+                        weight: 5,
+                        color: myGetColor_NATAdata1(layer.feature.properties.NewResp),
+                        dashArray: '',
+                        fillOpacity: 0.7
+                    });
+
+                    if (!L.Browser.ie && !L.Browser.opera) {
+                        layer.bringToFront();
+                    }
+                    
+                    NATAdata1Info.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_NATAdata1Var(e) {
+                NATAdata1Var.resetStyle(e.target);
+                NATAdata1Info.update();
+            }                
+
+            function myGetColor_NATAdata1(d) {
+                return d > 12  ? '#99000d' :
+                       d > 11  ? '#ef3b2c' :
+                       d > 10  ? '#fc9272' :                       
+                                 '#f7f7f7';
+            } 
+
+            // control that shows state info on hover
+            var NATAdata1Info = L.control({position: 'bottomleft'});
+
+            NATAdata1Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'Respiratory');
+                this.update();
+                return this._div;
+            };
+
+            NATAdata1Info.update = function (props) {
+                this._div.innerHTML = '<h4>Respiratory Risk Based on Environmental Factors</h4>' +  (props ?
+                    '<b>' + getNATARank(props.NewResp) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var NATAdata1Legend1 = L.control({position: 'bottomright'});
+
+            NATAdata1Legend1.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [12, 11, 10, 0],
+                    ranking = ['Greatest Risk', 'Greatly Increased Risk', 'Increased Risk', 'Least Risk'],
+                    labels = [],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    rank = ranking[i];
+                    to = grades[i + 1];
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_NATAdata1(from + 1) + '"></i> ' + rank);
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('NATAdata1Var').onclick = function() {
+                if (this.className === 'active') {
+                    NATAdata1Legend1.removeFrom(map);
+                    NATAdata1Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    NATAdata1Legend1.addTo(map);
+                    NATAdata1Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }            
+//---------------------------------------------------------------------------
+            //EPA NATA Data 2
+            var NATAdata2Var = L.geoJson(shapefile2, {
+                style: NATArisk2Style,
+                onEachFeature: onEachFeature_NATAdata2Var
+            });
+
+            function NATArisk2Style(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.5,
+                    fillColor: myGetColor_NATAdata2(feature.properties.NewCanRi)
+                };
+            } 
+
+            function onEachFeature_NATAdata2Var(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature_NATAdata2Var,
+                        mouseout: resetHighlight_NATAdata2Var,
+                        click: zoomToFeature
+                    });
+                }
+
+            function highlightFeature_NATAdata2Var(e) {
+                    var layer = e.target;
+
+                    layer.setStyle({
+                        weight: 5,
+                        color: myGetColor_NATAdata2(layer.feature.properties.NewCanRi),
+                        dashArray: '',
+                        fillOpacity: 0.7
+                    });
+
+                    if (!L.Browser.ie && !L.Browser.opera) {
+                        layer.bringToFront();
+                    }
+                    
+                    NATAdata2Info.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_NATAdata2Var(e) {
+                    NATAdata2Var.resetStyle(e.target);
+                    NATAdata2Info.update();
+            }                
+
+            function myGetColor_NATAdata2(d) {
+                return d > 12  ? '#99000d' :
+                       d > 11  ? '#ef3b2c' :
+                       d > 10  ? '#fc9272' :                       
+                                 '#f7f7f7';
+            } 
+
+            // control that shows state info on hover
+            var NATAdata2Info = L.control({position: 'bottomleft'});
+
+            NATAdata2Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'Cancer_Risk');
+                this.update();
+                return this._div;
+            };
+
+            NATAdata2Info.update = function (props) {
+                this._div.innerHTML = '<h4>Cancer Risk Based on Environmental Factors</h4>' +  (props ?
+                    '<b>' + getNATARank(props.NewCanRi) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var NATAdataLegend2 = L.control({position: 'bottomright'});
+
+            NATAdataLegend2.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [12, 11, 10, 0],
+                    ranking = ['Greatest Risk', 'Greatly Increased Risk', 'Increased Risk', 'Least Risk'],
+                    labels = [],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    rank = ranking[i];
+                    to = grades[i + 1];
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_NATAdata2(from + 1) + '"></i> ' + rank);
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('NATAdata2Var').onclick = function() {
+                if (this.className === 'active') {
+                    NATAdataLegend2.removeFrom(map);
+                    NATAdata2Info.removeFrom(map);
+                    
+                    this.className = '';
+                } else {
+
+                    NATAdataLegend2.addTo(map);
+                    NATAdata2Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                };
+
+//income ===========================================================
+    //Variable 5: Housing units without vehicles, with low food access at 1/2 mile
+            var incomeVar = L.geoJson(shapefile2, {
+                style: incomeStyle,
+                onEachFeature: onEachFeature_incomeVar
+            });
+
+            function incomeStyle(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.5,
+                    fillColor: myGetColor_incomeVar(feature.properties.MedIncome)
+                };
+            }
+
+            function onEachFeature_incomeVar(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_incomeVar,
+                    mouseout: resetHighlight_incomeVar,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_incomeVar(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                incomeInfo.update(layer.feature.properties);  
+            }
+
+            function resetHighlight_incomeVar(e) {
+                incomeVar.resetStyle(e.target);
+                incomeInfo.update();
+            }            
+
+            
+            function myGetColor_incomeVar(d) {
+                return d > 100000 ? '#3288bd' :
+                       d > 75000 ? '#66c2a5' :
+                       d > 60000  ? '#abdda4' :
+                       d > 50000  ? '#e6f598' :
+                       d > 40000  ? '#fee08b' :
+                       d > 30000  ? '#fdae61' :
+                       d > 20000  ? '#f46d43' :                       
+                                 '#d53e4f';
+            }
+
+            // control that shows state info on hover
+            var incomeInfo = L.control({position: 'bottomleft'});
+
+            incomeInfo.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'FoodAtlas5');
+                this.update();
+                return this._div;
+            };
+
+            incomeInfo.update = function (props) {
+                this._div.innerHTML = '<h4>Median Income</h4>' +  (props ?
+                    '<b>' + formatNumber(props.MedIncome) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var incomeLegend = L.control({position: 'bottomright'});
+
+            incomeLegend.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    colorGrades = [100000, 75000, 60000, 50000, 40000, 30000, 20000, 0],
+                    labels = ["Median Income"],
+                    from, to;
+
+                for (var i = 0; i < colorGrades.length; i++) {
+                    from = colorGrades[i];
+                    to = (colorGrades[i - 1]) - 1;
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_incomeVar(from + 1) + '"></i> ' +
+                        from + (to ? '&ndash;' + to : '+'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('incomeVar').onclick = function() {
+                if (this.className === 'active') {
+                    incomeLegend.removeFrom(map);
+                    incomeInfo.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    incomeLegend.addTo(map);
+                    incomeInfo.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+
+
+//demographics ===========================================================
+            //Percent African American
+            var demographicsVar1 = L.geoJson(shapefile2, {
+                style: demographicsStyle1,
+                onEachFeature: onEachFeature_demographicsVar1
+            });
+
+            function demographicsStyle1(feature) {
+
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_demographicsVar1((feature.properties.DP0080004)/(feature.properties.DP0010001))
+                };
+            }
+
+            function myGetColor_demographicsVar1(d) {
+                return d > .9159 ? '#525252' :
+                       d > .7054  ? '#969696' :
+                       d > .2261  ? '#cccccc' :                      
+                                 '#f7f7f7';
+            }            
+
+            function onEachFeature_demographicsVar1(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_demographicsVar1,
+                    mouseout: resetHighlight_demographicsVar1,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_demographicsVar1(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                demographicsInfo1.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_demographicsVar1(e) {
+
+                demographicsVar1.resetStyle(e.target);
+                demographicsInfo1.update();
+            } 
+            
+            var demographicsInfo1 = L.control({position: 'bottomleft'});
+
+            demographicsInfo1.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'demographicsInfo1');
+                this.update();
+                return this._div;
+            };
+
+            demographicsInfo1.update = function (props) {
+
+                this._div.innerHTML = '<h4>Percent African Amercian</h4>' +  (props ?
+                    '<b>' + makePercent(((props.DP0080004)/(props.DP0010001))) + " African American<br />" + props.NAMELSAD10 + '</b><br />'
+                    : 'Hover over a tract');
+            };                       
+
+            //Legend
+            var demographicsLegend1 = L.control({position: 'bottomright'});
+
+            demographicsLegend1.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [.9159, .7054, .2261, 0],
+                    percentages = [92, 71, 23, 0],
+                    labels = ["Percent African American"],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+
+                    from = grades[i];
+                    percent = percentages[i];
+                    to = (percentages[i - 1] - 1);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_demographicsVar1(from + .0001) + '"></i> ' +
+                        percent + (to ? '&ndash;' + to : '&ndash;100'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('demographicsVar1').onclick = function() {
+                if (this.className === 'active') {
+                    demographicsLegend1.removeFrom(map);
+                    demographicsInfo1.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    demographicsLegend1.addTo(map);
+                    demographicsInfo1.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+            //--------------------------------------------------------------------
+            //Percent Hispanic
+            var demographicsVar2 = L.geoJson(shapefile2, {
+                style: demographicsStyle2,
+                onEachFeature: onEachFeature_demographicsVar2
+            });
+
+            function demographicsStyle2(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_demographicsVar2((feature.properties.DP0100002)/(feature.properties.DP0010001))
+                };
+            }
+
+            function onEachFeature_demographicsVar2(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature_demographicsVar2,
+                        mouseout: resetHighlight_demographicsVar2,
+                        click: zoomToFeature
+                    });
+                }
+
+            function highlightFeature_demographicsVar2(e) {
+                    var layer = e.target;
+
+                    layer.setStyle({
+                        weight: 5,
+                        color: '#f00',
+                        dashArray: '',
+                        fillOpacity: 0.7
+                    });
+
+                    if (!L.Browser.ie && !L.Browser.opera) {
+                        layer.bringToFront();
+                    }
+                    
+                    demographicsInfo2.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_demographicsVar2(e) {
+                demographicsVar2.resetStyle(e.target);
+                demographicsInfo2.update();
+            } 
+
+            
+            function myGetColor_demographicsVar2(d) {
+                return d > .06386225 ? '#525252' :
+                       d > .024913152  ? '#969696' :
+                       d > .010734326  ? '#cccccc' :                      
+                                 '#f7f7f7';
+            }              
+
+            // control that shows state info on hover
+            var demographicsInfo2 = L.control({position: 'bottomleft'});
+
+            demographicsInfo2.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'demographicsInfo2');
+                this.update();
+                return this._div;
+            };
+
+            demographicsInfo2.update = function (props) {
+                this._div.innerHTML = '<h4>Percent Hispanic</h4>' +  (props ?
+                    '<b>' + makePercent(((props.DP0100002)/(props.DP0010001))) + ' Hispanic<br />' + props.NAMELSAD10 + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+
+            //legend
+            var demographicsLegend2 = L.control({position: 'bottomright'});
+
+            demographicsLegend2.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [.06386225, .024913152, .010734326, 0],
+                    percentages = [6, 2, 1, 0],
+                    labels = ["Percent Hispanic"],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    percent = percentages[i];                    
+                    to = roundToProperPrecision_Demographics2(percentages[i - 1]);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_demographicsVar2(from + .00000001) + '"></i> ' +
+                        percent + (to ? '&ndash;' + to : '&ndash;44'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            function roundToProperPrecision_Demographics2(number){
+                if (number > 2){
+                    return formatNumber(number - 1);
+                } else {
+                    return (number - .01);
+                }
+            }            
+
+            document.getElementById('demographicsVar2').onclick = function() {
+                if (this.className === 'active') {
+                    demographicsLegend2.removeFrom(map);
+                    demographicsInfo2.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    demographicsLegend2.addTo(map);
+                    demographicsInfo2.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+            //----------------------------------------------------------------
+
+            //Percent Native American
+            var demographicsVar3 = L.geoJson(shapefile2, {
+                style: demographicsStyle3,
+                onEachFeature: onEachFeature_demographicsVar3
+            });
+
+            function demographicsStyle3(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_demographicsVar3((feature.properties.DP0080005)/(feature.properties.DP0010001))
+                };
+            }
+
+            function onEachFeature_demographicsVar3(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature_demographicsVar3,
+                        mouseout: resetHighlight_demographicsVar3,
+                        click: zoomToFeature
+                    });
+                }
+
+            function highlightFeature_demographicsVar3(e) {
+                    var layer = e.target;
+
+                    layer.setStyle({
+                        weight: 5,
+                        color: '#f00',
+                        dashArray: '',
+                        fillOpacity: 0.7
+                    });
+
+                    if (!L.Browser.ie && !L.Browser.opera) {
+                        layer.bringToFront();
+                    }
+                    
+                    demographicsInfo3.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_demographicsVar3(e) {
+
+                        demographicsVar3.resetStyle(e.target);
+                        demographicsInfo3.update();
+            }             
+
+            
+            function myGetColor_demographicsVar3(d) {
+                return d > .003208293 ? '#525252' :
+                       d > .002132955  ? '#969696' :
+                       d > .001234315  ? '#cccccc' :                      
+                                 '#f7f7f7';
+            }            
+
+            // control that shows state info on hover
+            var demographicsInfo3 = L.control({position: 'bottomleft'});
+
+            demographicsInfo3.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'demographicsInfo3');
+                this.update();
+                return this._div;
+            };
+
+            demographicsInfo3.update = function (props) {
+                this._div.innerHTML = '<h4>Percent Native American</h4>' +  (props ?
+                    '<b>' + makePercent(((props.DP0080005)/(props.DP0010001))) + ' Native American<br />' + props.NAMELSAD10 + '</b><br />'
+                    : 'Hover over a tract');
+            };          
+
+            //Legend
+            var demographicsLegend3 = L.control({position: 'bottomright'});
+
+            demographicsLegend3.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [.003208293, .002132955, .001234315, 0],
+                    percentages = [.3, .2, .1, 0],
+                    labels = ["Percent Native American"],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+
+                    from = grades[i];
+                    percent = percentages[i];
+                    to = (percentages[i - 1] - .01);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_demographicsVar3(from + .000000001) + '"></i> ' +
+                        percent + (to ? '&ndash;' + formatNumberTo2(to) : '&ndash;.8'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+        
+            document.getElementById('demographicsVar3').onclick = function() {
+                if (this.className === 'active') {
+                    demographicsLegend3.removeFrom(map);
+                    demographicsInfo3.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    demographicsLegend3.addTo(map);
+                    demographicsInfo3.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+            //---------------------------------------------------------------
+            //Percent Asian
+            var demographicsVar4 = L.geoJson(shapefile2, {
+                style: demographicsStyle4,
+                onEachFeature: onEachFeature_demographicsVar4
+            });
+
+            function demographicsStyle4(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_demographicsVar4((feature.properties.DP0080006)/(feature.properties.DP0010001))
+                };
+            }
+
+            function onEachFeature_demographicsVar4(feature, layer) {
+                    layer.on({
+                        mouseover: highlightFeature_demographicsVar4,
+                        mouseout: resetHighlight_demographicsVar4,
+                        click: zoomToFeature
+                    });
+                }
+
+            function highlightFeature_demographicsVar4(e) {
+                    var layer = e.target;
+
+                    layer.setStyle({
+                        weight: 5,
+                        color: '#f00',
+                        dashArray: '',
+                        fillOpacity: 0.7
+                    });
+
+                    if (!L.Browser.ie && !L.Browser.opera) {
+                        layer.bringToFront();
+                    }
+                    
+                    demographicsInfo4.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_demographicsVar4(e) {
+                demographicsVar4.resetStyle(e.target);
+                demographicsInfo4.update();
+            }                         
+
+            
+            function myGetColor_demographicsVar4(d) {
+                return d > .020234605 ? '#525252' :
+                       d > .008093357  ? '#969696' :
+                       d > .001719199  ? '#cccccc' :                      
+                                 '#f7f7f7';
+            }             
+
+            // control that shows state info on hover
+            var demographicsInfo4 = L.control({position: 'bottomleft'});
+
+            demographicsInfo4.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'demographicsInfo4');
+                this.update();
+                return this._div;
+            };
+
+            demographicsInfo4.update = function (props) {
+                this._div.innerHTML = '<h4>Percent Asian American</h4>' +  (props ?
+                    '<b>' + makePercent(((props.DP0080006)/(props.DP0010001))) + ' Asian<br />' + props.NAMELSAD10 + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //Legend
+            var demographicsLegend4 = L.control({position: 'bottomright'});
+
+            demographicsLegend4.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [.020234605, .008093357, .001719199, 0],
+                    percentages = [2, .8, .2, 0],
+                    labels = ["Percent Asian American"],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+
+                    from = grades[i];
+                    percent = percentages[i];
+                    to = (percentages[i - 1] - .01);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_demographicsVar4(from + .000000001) + '"></i> ' +
+                        percent + (to ? '&ndash;' + formatNumberTo2(to) : '&ndash;14'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('demographicsVar4').onclick = function() {
+                if (this.className === 'active') {
+                    demographicsLegend4.removeFrom(map);
+                    demographicsInfo4.removeFrom(map);
+                    
+                    this.className = '';
+                } else {
+                    demographicsLegend4.addTo(map);
+                    demographicsInfo4.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                };
+
+            //-----------------------------------------------------------------
+            //end demographics
+
+//EPA Smart Location Database=============================================
+            /////-----------------------------------------------------------------
+            /////EPA Smart Location Database----------------
+            /////-----------------------------------------------------------------
+
+            var smartLocationDatabaseVar1 = L.geoJson(greenprint_SLD, {
+                style: smartLocationDatabaseStyle1,
+                onEachFeature: onEachFeature_smartLocationDatabaseVar1
+            });
+
+            function smartLocationDatabaseStyle1(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_smartLocationDatabase1(feature.properties.COUNTHU10)
+                };
+            }
+
+            function onEachFeature_smartLocationDatabaseVar1(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_smartLocationDatabaseVar1,
+                    mouseout: resetHighlight_smartLocationDatabaseVar1,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_smartLocationDatabaseVar1(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                smartLocationDatabase1Info.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_smartLocationDatabaseVar1(e) {
+
+                smartLocationDatabaseVar1.resetStyle(e.target);
+                smartLocationDatabase1Info.update();
+            }            
+
+            
+            function myGetColor_smartLocationDatabase1(d) {
+                return d > 916 ? '#252525' :
+                       d > 730  ? '#525252' :
+                       d > 615  ? '#737373' :
+                       d > 531  ? '#969696' :
+                       d > 452  ? '#bdbdbd' :
+                       d > 368  ? '#d9d9d9' :                       
+                                 '#f7f7f7';
+            } 
+
+            // control that shows state info on hover
+            var smartLocationDatabase1Info = L.control({position: 'bottomleft'});
+
+            smartLocationDatabase1Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'smartLocationDatabase1Info');
+                this.update();
+                return this._div;
+            };
+
+            smartLocationDatabase1Info.update = function (props) {
+                this._div.innerHTML = '<h4>Housing Units Per Acre</h4>' +  (props ?
+                    '<b>' + props.COUNTHU10 + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var smartLocationDatabaseLegend1 = L.control({position: 'bottomright'});
+
+            smartLocationDatabaseLegend1.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [916, 730, 615, 531, 452, 368, 0],
+                    labels = ["Housing Units Per Acre"],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    to = (grades[i - 1] - 1);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_smartLocationDatabase1(from + 1) + '"></i> ' +
+                        from + (to ? '&ndash;' + to : '+'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('smartLocationDatabaseVar1').onclick = function() {
+                if (this.className === 'active') {
+                    smartLocationDatabaseLegend1.removeFrom(map);
+                    smartLocationDatabase1Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    smartLocationDatabaseLegend1.addTo(map);
+                    smartLocationDatabase1Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+    //---------------------------------------------------------------------------
+    //EPA Smart Location Database Variable 2: Jobs Per Acre
+
+            //Jobs Per Acre
+            var smartLocationDatabaseVar2 = L.geoJson(greenprint_SLD, {
+                style: smartLocationDatabaseStyle2,
+                onEachFeature: onEachFeature_smartLocationDatabaseVar2
+            });
+
+            function smartLocationDatabaseStyle2(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_smartLocationDatabase2(feature.properties.D1C)
+                };
+            }
+
+            function onEachFeature_smartLocationDatabaseVar2(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_smartLocationDatabaseVar2,
+                    mouseout: resetHighlight_smartLocationDatabaseVar2,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_smartLocationDatabaseVar2(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                smartLocationDatabase2Info.update(layer.feature.properties);  
+            }
+
+            function resetHighlight_smartLocationDatabaseVar2(e) {
+
+                smartLocationDatabaseVar2.resetStyle(e.target);
+                smartLocationDatabase2Info.update();
+            }            
+
+            function myGetColor_smartLocationDatabase2(d) {
+                return d > 45.84 ? '#252525' :
+                       d > 12.44  ? '#525252' :
+                       d > 3.26  ? '#737373' :
+                       d > .86  ? '#969696' :
+                       d > .22  ? '#bdbdbd' :                       
+                       d > .046  ? '#d9d9d9' :
+                                 '#f7f7f7';
+            } 
+
+            // control that shows state info on hover
+            var smartLocationDatabase2Info = L.control({position: 'bottomleft'});
+
+            smartLocationDatabase2Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'demographicsInfo2');
+                this.update();
+                return this._div;
+            };
+
+            smartLocationDatabase2Info.update = function (props) {
+                this._div.innerHTML = '<h4>Jobs Per Acre</h4>' +  (props ?
+                    '<b>' + formatInfoToCorrectPrecision(props.D1C) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var smartLocationDatabaseLegend2 = L.control({position: 'bottomright'});
+
+            smartLocationDatabaseLegend2.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    colorGrades = [45.84, 12.44, 3.26, .86, .22, .046, 0],
+                    rounded = [46, 12, 3, .86, .22, .05, 0],
+                    labels = ["Jobs Per Acre"],
+                    from, to;
+
+                for (var i = 0; i < colorGrades.length; i++) {
+                    from = colorGrades[i];
+                    roundedNum = rounded[i];
+                    to = roundToProperPrecision(rounded[i - 1]);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_smartLocationDatabase2(from + .01) + '"></i> ' +
+                        roundedNum + (to ? '&ndash;' + to : '+'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('smartLocationDatabaseVar2').onclick = function() {
+                if (this.className === 'active') {
+                    smartLocationDatabaseLegend2.removeFrom(map);
+                    smartLocationDatabase2Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    smartLocationDatabaseLegend2.addTo(map);
+                    smartLocationDatabase2Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }   
+
+    //---------------------------------------------------------------------------
+    //EPA Smart Location Database Variable 3: Jobs Per Household
+
+            var smartLocationDatabaseVar3 = L.geoJson(greenprint_SLD, {
+                style: smartLocationDatabaseStyle3,
+                onEachFeature: onEachFeature_smartLocationDatabaseVar3
+            });
+
+            function smartLocationDatabaseStyle3(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_smartLocationDatabase3(feature.properties.D2A_JPHH)
+                };
+            }
+
+            function onEachFeature_smartLocationDatabaseVar3(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_smartLocationDatabaseVar3,
+                    mouseout: resetHighlight_smartLocationDatabaseVar3,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_smartLocationDatabaseVar3(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                smartLocationDatabase3Info.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_smartLocationDatabaseVar3(e) {
+                smartLocationDatabaseVar3.resetStyle(e.target);
+                smartLocationDatabase3Info.update();
+            }            
+
+            
+            function myGetColor_smartLocationDatabase3(d) {
+                return d > 1.701 ? '#252525' :
+                       d > .673  ? '#525252' :
+                       d > .312  ? '#737373' :
+                       d > .149  ? '#969696' :
+                       d > .061  ? '#bdbdbd' :
+                       d > .022  ? '#d9d9d9' :                       
+                                 '#f7f7f7';
+            }
+
+            // control that shows state info on hover
+            var smartLocationDatabase3Info = L.control({position: 'bottomleft'});
+
+            smartLocationDatabase3Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'demographicsInfo2');
+                this.update();
+                return this._div;
+            };
+
+            smartLocationDatabase3Info.update = function (props) {
+                this._div.innerHTML = '<h4>Jobs Per Household</h4>' +  (props ?
+                    '<b>' + formatJobsPerHouseholdToCorrectPrecision(props.D2A_JPHH) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            function formatJobsPerHouseholdToCorrectPrecision(number){
+                if (number < 1){
+                    return formatNumberTo2(number);
+                } else if (number > 1.7){
+                    return formatNumber(number);
+                } else {
+                    return number.toFixed(1);
+                }
+            }            
+
+            //legend
+            var smartLocationDatabaseLegend3 = L.control({position: 'bottomright'});
+
+            smartLocationDatabaseLegend3.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    colorGrades = [1.701, .673, .312, .149, .061, .022, 0],
+                    rounded = [1.7, .7, .3, .15, .06, .02, 0],
+                    labels = ["Jobs Per Household"],
+                    from, to;
+
+                for (var i = 0; i < colorGrades.length; i++) {
+                    from = colorGrades[i];
+                    roundedNum = rounded[i];
+                    to = (rounded[i - 1] - .01);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_smartLocationDatabase3(from + .01) + '"></i> ' +
+                        roundedNum + (to ? '&ndash;' + formatNumberTo2(to) : '+'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };   
+
+            document.getElementById('smartLocationDatabaseVar3').onclick = function() {
+                if (this.className === 'active') {
+                    smartLocationDatabaseLegend3.removeFrom(map);
+                    smartLocationDatabase3Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    smartLocationDatabaseLegend3.addTo(map);
+                    smartLocationDatabase3Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+    //---------------------------------------------------------------------------
+    //EPA Smart Location Database Variable 4: Zero Car Households
+
+            var smartLocationDatabaseVar4 = L.geoJson(greenprint_SLD, {
+                style: smartLocationDatabaseStyle4,
+                onEachFeature: onEachFeature_smartLocationDatabaseVar4
+            });
+
+            function smartLocationDatabaseStyle4(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_smartLocationDatabase4(feature.properties.AUTOOWN0/feature.properties.AreaKm)
+                };
+            }
+
+            function onEachFeature_smartLocationDatabaseVar4(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_smartLocationDatabaseVar4,
+                    mouseout: resetHighlight_smartLocationDatabaseVar4,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_smartLocationDatabaseVar4(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                smartLocationDatabase4Info.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_smartLocationDatabaseVar4(e) {
+                smartLocationDatabaseVar4.resetStyle(e.target);
+                smartLocationDatabase4Info.update();
+            }
+            
+            function myGetColor_smartLocationDatabase4(d) {
+                return d > 640.6 ? '#252525' :
+                       d > 181.61  ? '#525252' :
+                       d > 51.31  ? '#737373' :
+                       d > 14.33  ? '#969696' :
+                       d > 3.83  ? '#bdbdbd' :
+                       d > .846  ? '#d9d9d9' :                       
+                                 '#f7f7f7';
+            }
+
+            // control that shows state info on hover
+            var smartLocationDatabase4Info = L.control({position: 'bottomleft'});
+
+            smartLocationDatabase4Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'demographicsInfo2');
+                this.update();
+                return this._div;
+            };
+
+            smartLocationDatabase4Info.update = function (props) {
+                this._div.innerHTML = '<h4>Zero Car Households <br> (per Sq Km<sup>2</sup>)</h4>' +  (props ?
+                    '<b>' + formatInfoToCorrectPrecision(props.AUTOOWN0/props.AreaKm) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var smartLocationDatabaseLegend4 = L.control({position: 'bottomright'});
+
+            smartLocationDatabaseLegend4.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    colorGrades = [640.6, 181.61, 51.31, 14.33, 3.83, .846, 0],
+                    rounded = [641, 182, 51, 14, 4, 1, 0],
+                    labels = ["Zero Car Households (per Sq Km<sup>2</sup>)"],
+                    from, to;
+
+                for (var i = 0; i < colorGrades.length; i++) {
+                    from = colorGrades[i];
+                    roundedNum = rounded[i];
+                    to = (rounded[i - 1] - 1);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_smartLocationDatabase4(from + 1) + '"></i> ' +
+                        roundedNum + formatLegend(to));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('smartLocationDatabaseVar4').onclick = function() {
+                if (this.className === 'active') {
+                    smartLocationDatabaseLegend4.removeFrom(map);
+                    smartLocationDatabase4Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    smartLocationDatabaseLegend4.addTo(map);
+                    smartLocationDatabase4Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+    //---------------------------------------------------------------------------
+    //EPA Smart Location Database Variable 5: Low Wage Workers
+
+            var smartLocationDatabaseVar5 = L.geoJson(greenprint_SLD, {
+                style: smartLocationDatabaseStyle5,
+                onEachFeature: onEachFeature_smartLocationDatabaseVar5
+            });
+
+            function smartLocationDatabaseStyle5(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_smartLocationDatabase5(feature.properties.R_PCTLOWWA)
+                };
+            }
+
+            function onEachFeature_smartLocationDatabaseVar5(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_smartLocationDatabaseVar5,
+                    mouseout: resetHighlight_smartLocationDatabaseVar5,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_smartLocationDatabaseVar5(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                smartLocationDatabase5Info.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_smartLocationDatabaseVar5(e) {
+                smartLocationDatabaseVar5.resetStyle(e.target);
+                smartLocationDatabase5Info.update();
+            }            
+
+            
+            function myGetColor_smartLocationDatabase5(d) {
+                return d > .349 ? '#252525' :
+                       d > .309  ? '#525252' :
+                       d > .276  ? '#737373' :
+                       d > .249  ? '#969696' :
+                       d > .217  ? '#bdbdbd' :
+                       d > .194  ? '#d9d9d9' :                       
+                                 '#f7f7f7';
+            }
+
+            // control that shows state info on hover
+            var smartLocationDatabase5Info = L.control({position: 'bottomleft'});
+
+            smartLocationDatabase5Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'demographicsInfo2');
+                this.update();
+                return this._div;
+            };
+
+            smartLocationDatabase5Info.update = function (props) {
+                this._div.innerHTML = '<h4>Low Wage Workers</h4>' +  (props ?
+                    '<b>' + makePercent(props.R_PCTLOWWA) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var smartLocationDatabaseLegend5 = L.control({position: 'bottomright'});
+
+            smartLocationDatabaseLegend5.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    colorGrades = [.349, .309, .276, .249, .217, .194, 0],
+                    rounded = [35, 31, 28, 25, 22, 19, 0],
+                    labels = ["Percent Low Wage Workers"],
+                    from, to;
+
+                for (var i = 0; i < colorGrades.length; i++) {
+                    from = colorGrades[i];
+                    roundedNum = rounded[i];
+                    to = (rounded[i - 1] - 1);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_smartLocationDatabase5(from + .01) + '"></i> ' +
+                        roundedNum + (to ? '&ndash;' + to : '+'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('smartLocationDatabaseVar5').onclick = function() {
+                if (this.className === 'active') {
+                    smartLocationDatabaseLegend5.removeFrom(map);
+                    smartLocationDatabase5Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    smartLocationDatabaseLegend5.addTo(map);
+                    smartLocationDatabase5Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+    //---------------------------------------------------------------------------
+    //EPA Smart Location Database Variable 6: Population Density
+
+            var smartLocationDatabaseVar6 = L.geoJson(greenprint_SLD, {
+                style: smartLocationDatabaseStyle6,
+                onEachFeature: onEachFeature_smartLocationDatabaseVar6
+            });
+
+            function smartLocationDatabaseStyle6(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_smartLocationDatabase6((feature.properties.TOTPOP10)/(feature.properties.AreaKm))
+                };
+            }
+
+            function onEachFeature_smartLocationDatabaseVar6(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_smartLocationDatabaseVar6,
+                    mouseout: resetHighlight_smartLocationDatabaseVar6,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_smartLocationDatabaseVar6(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                smartLocationDatabase6Info.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_smartLocationDatabaseVar6(e) {
+                smartLocationDatabaseVar6.resetStyle(e.target);
+                smartLocationDatabase6Info.update();
+            }            
+
+            
+            function myGetColor_smartLocationDatabase6(d) {
+                return d >= 1843 ? '#ca0020' :
+                       d >= 1283  ? '#f4a582' :
+                       d >= 741  ? '#bababa' :                      
+                                     '#dadada';
+
+            }
+
+            // control that shows state info on hover
+            var smartLocationDatabase6Info = L.control({position: 'bottomleft'});
+
+            smartLocationDatabase6Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'demographicsInfo2');
+                this.update();
+                return this._div;
+            };
+
+            smartLocationDatabase6Info.update = function (props) {
+                this._div.innerHTML = '<h4>Population Density</h4>' +  (props ?
+                    'Population per Km<sup>2</sup>: <b>' + formatNumber((props.TOTPOP10)/(props.AreaKm)) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var demographicsLegend6 = L.control({position: 'bottomright'});
+
+            demographicsLegend6.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = [1843, 1283, 741, 0],
+                    labels = ['Population per Km<sup>2</sup>'],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    to = (grades[i - 1] - 1);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_smartLocationDatabase6(from + 1) + '"></i> ' +
+                        from + (to ? '&ndash;' + to : '&ndash;11490'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('smartLocationDatabaseVar6').onclick = function() {
+                if (this.className === 'active') {
+                    demographicsLegend6.removeFrom(map);
+                    smartLocationDatabase6Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    demographicsLegend6.addTo(map);
+                    smartLocationDatabase6Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                } 
+
+//USDA Food Atlas=============================================
+            /////-----------------------------------------------------------------
+            /////USDA Food Atlas----------------
+            /////----------------------------------------------------------------- 
+            //Variable 2: Low-Income People with Low Food Access (urban: 1/2 mile, rural: 10 miles)
+            var foodAtlasVar2 = L.geoJson(shapefile2, {
+                style: foodAtlasStyle2,
+                onEachFeature: onEachFeature_foodAtlasVar2
+            });
+
+            function foodAtlasStyle2(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_foodAtlasVar2(feature.properties.lalowihalf/feature.properties.AreaKm)
+                };
+            }
+
+            function onEachFeature_foodAtlasVar2(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_foodAtlasVar2,
+                    mouseout: resetHighlight_foodAtlasVar2,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_foodAtlasVar2(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                foodAtlas2Info.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_foodAtlasVar2(e) {
+                foodAtlasVar2.resetStyle(e.target);
+                foodAtlas2Info.update();
+            }            
+
+            
+            function myGetColor_foodAtlasVar2(d) {
+                return d > 814 ? '#252525' :
+                       d > 501.1  ? '#525252' :
+                       d > 344.8  ? '#737373' :
+                       d > 223.6  ? '#969696' :
+                       d > 138.1  ? '#bdbdbd' :
+                       d > 60.78  ? '#d9d9d9' : 
+                                 '#f7f7f7';
+            }
+
+            // control that shows state info on hover
+            var foodAtlas2Info = L.control({position: 'bottomleft'});
+
+            foodAtlas2Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'FoodAtlas2');
+                this.update();
+                return this._div;
+            };
+
+            foodAtlas2Info.update = function (props) {
+                this._div.innerHTML = '<h4>Low-Income People with Low Food Access <br> (per Km <sup>2</sup>)</h4>' +  (props ?
+                    '<b>' + formatNumber(props.lalowihalf/props.AreaKm) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var foodAtlasLegend2 = L.control({position: 'bottomright'});
+
+            foodAtlasLegend2.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    colorGrades = [814, 501.1, 344.8, 223.6, 138.1, 60.78, 0],
+                    rounded = [814, 501, 345, 224, 138, 61, 0],
+                    labels = ["Low-Income, Low Food Access <br> (per Km <sup>2</sup>)"],
+                    from, to;
+
+                for (var i = 0; i < colorGrades.length; i++) {
+                    from = colorGrades[i];
+                    roundedNum = rounded[i];
+                    to = (rounded[i - 1] - 1);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_foodAtlasVar2(from + 1) + '"></i> ' +
+                        roundedNum + (to ? '&ndash;' + to : '+'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('foodAtlasVar2').onclick = function() {
+                if (this.className === 'active') {
+                    foodAtlasLegend2.removeFrom(map);
+                    foodAtlas2Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    foodAtlasLegend2.addTo(map);
+                    foodAtlas2Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+    //---------------------------------------------------------------------------
+    //Variable 3: Children Age 0-17 with Low Food Access at 1/2 Mile
+            
+            var foodAtlasVar3 = L.geoJson(shapefile2, {
+                style: foodAtlasStyle3,
+                onEachFeature: onEachFeature_foodAtlasVar3
+            });
+
+            function foodAtlasStyle3(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_foodAtlasVar3(feature.properties.lakidshalf/feature.properties.AreaKm)
+                };
+            }
+
+            function onEachFeature_foodAtlasVar3(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_foodAtlasVar3,
+                    mouseout: resetHighlight_foodAtlasVar3,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_foodAtlasVar3(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                foodAtlas3Info.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_foodAtlasVar3(e) {
+                foodAtlasVar3.resetStyle(e.target);
+                foodAtlas3Info.update();
+            }             
+
+            
+            function myGetColor_foodAtlasVar3(d) {
+                return d > 385.895 ? '#252525' :
+                       d > 267.175  ? '#525252' :
+                       d > 199.639  ? '#737373' :
+                       d > 154.859  ? '#969696' :
+                       d > 116.374  ? '#bdbdbd' :
+                       d > 61.097  ? '#d9d9d9' :                       
+                                 '#f7f7f7';
+            }
+
+            // control that shows state info on hover
+            var foodAtlas3Info = L.control({position: 'bottomleft'});
+
+            foodAtlas3Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'FoodAtlas3');
+                this.update();
+                return this._div;
+            };
+
+            foodAtlas3Info.update = function (props) {
+                this._div.innerHTML = '<h4>Children With Low Food Access <br> (per Km <sup>2</sup>)</h4>' +  (props ?
+                    '<b>' + formatNumber(props.lakidshalf/props.AreaKm) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var foodAtlasLegend3 = L.control({position: 'bottomright'});
+
+            foodAtlasLegend3.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    colorGrades = [385.895, 267.175, 199.639, 154.859, 116.374, 61.097, 0],
+                    rounded = [386, 267, 200, 155, 116, 61, 0],
+                    labels = ["Children With Low Food Access <br> (per Km <sup>2</sup>)"],
+                    from, to;
+
+                for (var i = 0; i < colorGrades.length; i++) {
+                    from = colorGrades[i];
+                    roundedNum = rounded[i];
+                    to = (rounded[i - 1] - 1);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_foodAtlasVar3(from + 1) + '"></i> ' +
+                        roundedNum + (to ? '&ndash;' + to : '+'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('foodAtlasVar3').onclick = function() {
+                if (this.className === 'active') {
+                    foodAtlasLegend3.removeFrom(map);
+                    foodAtlas3Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    foodAtlasLegend3.addTo(map);
+                    foodAtlas3Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+    //---------------------------------------------------------------------------
+    //Variable 4: Seniors age 65+ with Low Food Access at 1/2 Mile                       
+            
+            var foodAtlasVar4 = L.geoJson(shapefile2, {
+                style: foodAtlasStyle4,
+                onEachFeature: onEachFeature_foodAtlasVar4
+            });
+
+            function foodAtlasStyle4(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_foodAtlas4(feature.properties.laseniorsh/feature.properties.AreaKm)
+                };
+            }
+
+            function onEachFeature_foodAtlasVar4(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_foodAtlasVar4,
+                    mouseout: resetHighlight_foodAtlasVar4,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_foodAtlasVar4(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                foodAtlas4Info.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_foodAtlasVar4(e) {
+                foodAtlasVar4.resetStyle(e.target);
+                foodAtlas4Info.update();
+            }            
+
+            
+            function myGetColor_foodAtlas4(d) {
+                return d > 156.397 ? '#252525' :
+                       d > 105.892  ? '#525252' :
+                       d > 83.009  ? '#737373' :
+                       d > 64.443  ? '#969696' :
+                       d > 46.772  ? '#bdbdbd' :
+                       d > 24.712  ? '#d9d9d9' :                       
+                                 '#f7f7f7';
+            }
+
+            // control that shows state info on hover
+            var foodAtlas4Info = L.control({position: 'bottomleft'});
+
+            foodAtlas4Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'demographicsInfo2');
+                this.update();
+                return this._div;
+            };
+
+            foodAtlas4Info.update = function (props) {
+                this._div.innerHTML = '<h4>Seniors with Low Food Access <br> (per Km <sup>2</sup>)</h4>' +  (props ?
+                    '<b>' + formatNumber(props.laseniorsh/props.AreaKm) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var foodAtlasLegend4 = L.control({position: 'bottomright'});
+
+            foodAtlasLegend4.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    colorGrades = [156.397, 105.892, 83.009, 64.443, 46.772, 24.712, 0],
+                    rounded = [156, 106, 83, 64, 47, 25, 0],
+                    labels = ["Seniors with Low Food Access <br> (per Km <sup>2</sup>)"],
+                    from, to;
+
+                for (var i = 0; i < colorGrades.length; i++) {
+                    from = colorGrades[i];
+                    roundedNum = rounded[i];
+                    to = (rounded[i - 1] - 1);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_foodAtlas4(from + 1) + '"></i> ' +
+                        roundedNum + (to ? '&ndash;' + to : '+'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            }; 
+
+            document.getElementById('foodAtlasVar4').onclick = function() {
+                if (this.className === 'active') {
+                    foodAtlasLegend4.removeFrom(map);
+                    foodAtlas4Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    foodAtlasLegend4.addTo(map);
+                    foodAtlas4Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+    //---------------------------------------------------------------------------
+    //Variable 5: Housing units without vehicles, with low food access at 1/2 mile
+            var foodAtlasVar5 = L.geoJson(shapefile2, {
+                style: foodAtlasStyle5,
+                onEachFeature: onEachFeature_foodAtlasVar5
+            });
+
+            function foodAtlasStyle5(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.7,
+                    fillColor: myGetColor_foodAtlas5(feature.properties.lahunvhalf/feature.properties.AreaKm)
+                };
+            }
+
+            function onEachFeature_foodAtlasVar5(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_foodAtlasVar5,
+                    mouseout: resetHighlight_foodAtlasVar5,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_foodAtlasVar5(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                foodAtlas5Info.update(layer.feature.properties);  
+            }
+
+            function resetHighlight_foodAtlasVar5(e) {
+
+                foodAtlasVar5.resetStyle(e.target);
+                foodAtlas5Info.update();
+            }            
+
+            
+            function myGetColor_foodAtlas5(d) {
+                return d > 93.52 ? '#252525' :
+                       d > 41.417  ? '#525252' :
+                       d > 26.381  ? '#737373' :
+                       d > 10.530  ? '#969696' :
+                       d > 4.804  ? '#bdbdbd' :
+                       d > 1.118  ? '#d9d9d9' :                       
+                                 '#f7f7f7';
+            }
+
+            // control that shows state info on hover
+            var foodAtlas5Info = L.control({position: 'bottomleft'});
+
+            foodAtlas5Info.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'FoodAtlas5');
+                this.update();
+                return this._div;
+            };
+
+            foodAtlas5Info.update = function (props) {
+                this._div.innerHTML = '<h4>Housing Units Without Vehicles <br> (per Km <sup>2</sup>)</h4>' +  (props ?
+                    '<b>' + formatNumber(props.lahunvhalf/props.AreaKm) + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            //legend
+            var foodAtlasLegend5 = L.control({position: 'bottomright'});
+
+            foodAtlasLegend5.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    colorGrades = [93.52, 41.417, 26.381, 10.530, 4.804, 1.118, 0],
+                    rounded = [94, 41, 26, 11, 5, 1, 0],
+                    labels = ["Housing Units Without Vehicles <br> (per Km <sup>2</sup>)"],
+                    from, to;
+
+                for (var i = 0; i < colorGrades.length; i++) {
+                    from = colorGrades[i];
+                    roundedNum = rounded[i];
+                    to = roundToProperPrecision(rounded[i - 1]);
+
+                    console.log("this is to: " + to);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_foodAtlas5(from + 1) + '"></i> ' +
+                        roundedNum + outputForFoodAtlas5(to));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            function outputForFoodAtlas5(to){
+                if (to > .99){
+                    return "&ndash;" + to;
+                } else if (to == .99) {
+                    return "";
+                } else {
+                    return "+";
+                }
+            }
+
+            document.getElementById('foodAtlasVar5').onclick = function() {
+                if (this.className === 'active') {
+                    foodAtlasLegend5.removeFrom(map);
+                    foodAtlas5Info.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    foodAtlasLegend5.addTo(map);
+                    foodAtlas5Info.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+//Zoning=============================================
+            /////-----------------------------------------------------------------
+            /////Zoning----------------
+            /////-----------------------------------------------------------------
+
+            var zoningVar = L.geoJson(zoning, {
+                style: zoningStyle,
+                onEachFeature: onEachFeature_zoningVar
+            });
+
+            function zoningStyle(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'white',
+                    dashArray: '3',
+                    fillOpacity: 0.4,
+                    fillColor: myGetColor_zoningVar(feature.properties.ZoneUse)
+                };
+            }
+
+            function onEachFeature_zoningVar(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_zoningVar,
+                    mouseout: resetHighlight_zoningVar,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_zoningVar(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                zoningInfo.update(layer.feature.properties);    
+            }
+
+            function resetHighlight_zoningVar(e) {
+
+                zoningVar.resetStyle(e.target);
+                zoningInfo.update();
+            }            
+    
+            function myGetColor_zoningVar(d) {
+                var zoneUse = d;
+
+                //Agricultural
+                if ((zoneUse == "Agricultural") || (zoneUse == "Argricultural")){
+                    return '#00b64f';
+                } 
+                //Residential
+                else if ((zoneUse == "Bluffview Resid") || (zoneUse == "Duplex") || (zoneUse == "Duplex Resident") || (zoneUse == "Mobile Home") || (zoneUse == "Neighborhood") || (zoneUse == "Residence") || (zoneUse == "Residence/R-S15") || (zoneUse == "Residential") || (zoneUse == "residential") || (zoneUse == "Town House")){
+                    return '#ffb400';
+                }
+                //Multi-Family
+                else if ((zoneUse == "MULTI-FAMILY") || (zoneUse == "Multi-Family") || (zoneUse == "Multi-Family Residential")){
+                    return '#ff9f00';
+                }
+                //Commercial
+                else if ((zoneUse == "COMMERCIAL") || (zoneUse == "Commercial") || (zoneUse == "Commerical") || (zoneUse == "Neighborhood Com") || (zoneUse == "commercial")){
+                    return '#ff7d73';
+                }
+                //Industrial
+                else if ((zoneUse == "INDUSTRY") || (zoneUse == "Indrustrial") || (zoneUse == "Industrial") || (zoneUse == "Industry")){
+                    return '#4b5cd7';
+                }
+                //Light Industrial
+                else if ((zoneUse == "Light Industrial") || (zoneUse == "Industry") || (zoneUse == "Light Industrial")){
+                    return '#3aa6d0';
+                }
+                //Other
+                else if ((zoneUse == "College") || (zoneUse == "College/Univ.") || (zoneUse == 'College or University')){
+                    return '#212121';
+                } else if (zoneUse == "Flood Way"){
+                    return '#dedede';
+                } else if (zoneUse == "Hospital"){
+                    return '#794050';
+                } else if (zoneUse == "Institute"){
+                    return '#444444';
+                } else if (zoneUse == "Mixed Use"){
+                    return '#777777';
+                } else if ((zoneUse == "OFFICE") || (zoneUse == "Office")){
+                    return '#9040D5';
+                } else if (zoneUse == "Parking"){
+                    return '#cccccc';
+                } else if (zoneUse == "South Main His" || (zoneUse == 'South Main Historic Arts District')){
+                    return '#f35d65';
+                } else if (zoneUse == "Tom Lee Park"){
+                    return '#396b39';
+                }
+                //?
+                else if(zoneUse == null)                {
+                    return '#fff';
+                }
+            }
+
+            function myGetZone(d) {
+                var zoneUse = d;
+
+                //Agricultural
+                if ((zoneUse == "Agricultural") || (zoneUse == "Argricultural")){
+                    return 'Agricultural';
+                } 
+                //Residential
+                else if ((zoneUse == "Bluffview Resid") || (zoneUse == "Duplex") || (zoneUse == "Duplex Resident") || (zoneUse == "Mobile Home") || (zoneUse == "Neighborhood") || (zoneUse == "Residence") || (zoneUse == "Residence/R-S15") || (zoneUse == "Residential") || (zoneUse == "residential") || (zoneUse == "Town House")){
+                    return 'Residential';
+                }
+                //Multi-Family
+                else if ((zoneUse == "MULTI-FAMILY") || (zoneUse == "Multi-Family") || (zoneUse == "Multi-Family Residential")){
+                    return 'Multi-Family Residential';
+                }
+                //Commercial
+                else if ((zoneUse == "COMMERCIAL") || (zoneUse == "Commercial") || (zoneUse == "Commerical") || (zoneUse == "Neighborhood Com") || (zoneUse == "commercial")){
+                    return 'Commercial';
+                }
+                //Industrial
+                else if ((zoneUse == "INDUSTRY") || (zoneUse == "Indrustrial") || (zoneUse == "Industrial") || (zoneUse == "Industry")){
+                    return 'Industrial';
+                }
+                //Light Industrial
+                else if ((zoneUse == "Light Industrial") || (zoneUse == "Industry") || (zoneUse == "Light Industrial")){
+                    return 'Light Industrial';
+                }
+                //Other
+                else if ((zoneUse == "College") || (zoneUse == "College/Univ.") || (zoneUse == 'College or University')){
+                    return 'College or University';
+                } else if (zoneUse == "Flood Way"){
+                    return 'Flood Way';
+                } else if (zoneUse == "Hospital"){
+                    return 'Hospital';
+                } else if (zoneUse == "Institute"){
+                    return 'Institute';
+                } else if (zoneUse == "Mixed Use"){
+                    return 'Mixed Use';
+                } else if ((zoneUse == "OFFICE") || (zoneUse == "Office")){
+                    return 'Office';
+                } else if (zoneUse == "Parking"){
+                    return 'Parking';
+                } else if (zoneUse == "South Main His" || (zoneUse == 'South Main Historic Arts District')){
+                    return 'South Main Historic Arts District';
+                } else if (zoneUse == "Tom Lee Park"){
+                    return 'Tom Lee Park';
+                }
+                //?
+                else if(zoneUse == null)                {
+                    return 'No Data';
+                }
+            }
+
+            // control that shows state info on hover
+            var zoningInfo = L.control({position: 'bottomleft'});
+
+            zoningInfo.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'smartLocationDatabase1Info');
+                this.update();
+                return this._div;
+            };
+
+            zoningInfo.update = function (props) {
+                this._div.innerHTML = '<h4>Memphis Unified Development Code (UDC) Zoning</h4>' +  (props ?
+                    '<b>Zone Use: ' + myGetZone(props.ZoneUse) + '</b><br />'
+                    : 'Hover over a tract');
+            };            
+
+            //legend
+            var zoningLegend = L.control({position: 'bottomright'});
+
+            zoningLegend.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = ['Agricultural', 'Commercial', 'Industrial', 'Light Industrial', 'Multi-Family Residential', 'Residential', '', 'College or University', 'Flood Way', 'Hospital', 'Institute', 'Mixed Use', 'Office', 'Parking', 'South Main Historic Arts District', 'Tom Lee Park'],
+                    labels = ["Zoning"],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    to = grades[i + 1];
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_zoningVar(from) + '"></i> ' + (from));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('zoningVar').onclick = function() {
+                if (this.className === 'active') {
+                    zoningLegend.removeFrom(map);
+                    zoningInfo.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    zoningLegend.addTo(map);
+                    zoningInfo.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+//EPA Monitors=============================================
+            /////-----------------------------------------------------------------
+            /////EPA Monitors----------------
+            /////-----------------------------------------------------------------
+            //Current EPA Monitor Location
+            var currentEPAMonitorVar = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/EPA_Monitor24px.png",
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 17],
+                            popupAnchor: [0, -25], 
+                            opacity: 0.5
+                        }),
+                        
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+   
+                    }
+               
+            });
+            $.getJSON("data/currentEPAmonitor.js", function (data) {
+                currentEPAMonitorVar.addData(data);
+            });
+
+            //Proposed EPA Monitor Locations
+            var proposedEPAMonitorsVar = L.geoJson(null, {
+                pointToLayer: function (feature, latlng) {
+                    return L.marker(latlng, {
+                        icon: L.icon({
+                            iconUrl: "img/EPA_Monitor_Grey24px.png",
+                            iconSize: [24, 24],
+                            iconAnchor: [12, 17], //this is the middle of a 24x24 px PNG
+                            popupAnchor: [0, -25], 
+                            opacity: 0.5
+                        }),
+                        
+                        riseOnHover: true
+                    });
+                },
+                onEachFeature: function (feature, layer) {
+                }
+            });
+            $.getJSON("data/proposedEPAmonitors.js", function (data) {
+                proposedEPAMonitorsVar.addData(data);
+            });          
+         
+
+//Memphis CFIRE Data=============================================
+            /////-----------------------------------------------------------------
+            /////Memphis CFIRE Data----------------
+            /////-----------------------------------------------------------------
+            //Neighborhoods
+            var neighborhoodsVar = L.geoJson(neighborhoods, {
+                style: neighborhoodsStyle,
+                onEachFeature: onEachFeature_neighborhoodsVar
+            });
+
+            function neighborhoodsStyle(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: myGetColor_neighborhoodsVar(feature.properties.Name),
+                    dashArray: '3',
+                    fillOpacity: 0.2,
+                    fillColor: myGetColor_neighborhoodsVar(feature.properties.Name)
+                };
+            }
+
+            function onEachFeature_neighborhoodsVar(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_neighborhoodsVar,
+                    mouseout: resetHighlight_neighborhoodsVar,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_neighborhoodsVar(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.5
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                neighborhoodsInfo.update(layer.feature.properties);  
+            }
+
+            function resetHighlight_neighborhoodsVar(e) {
+                neighborhoodsVar.resetStyle(e.target);
+                neighborhoodsInfo.update();
+            }            
+
+            
+            function myGetColor_neighborhoodsVar(d) {
+                if (d == "Fox Meadows"){
+                    return '#00c5ff';
+                } else if (d == "Parkway Village"){
+                    return '#2f57b5';
+                } else if (d == "Hickory Hill"){
+                    return '#b030c7';                    
+                } else if (d == "Oakville"){
+                    return '#31ab24';                      
+                } else if (d == "Oakhaven"){
+                    return '#c45a29';       
+                } else {
+                    console.log("Error: Neighborhoods myGetColor. Data entered was: " + d + " Oh, it's the legend trying to populate.");
+                }
+            }
+
+            // control that shows state info on hover
+            var neighborhoodsInfo = L.control({position: 'bottomleft'});
+
+            neighborhoodsInfo.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'Neighborhoods');
+                this.update();
+                return this._div;
+            };
+
+            neighborhoodsInfo.update = function (props) {
+                this._div.innerHTML = '<h4>Neighborhoods</h4>' +  (props ?
+                    '<b>' + props.Name + '</b><br />'
+                    : 'Hover over a neighborhood');
+            };
+
+            //legend
+            var neighborhoodsLegend = L.control({position: 'bottomright'});
+
+            neighborhoodsLegend.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = ['Fox Meadows', 'Hickory Hill', 'Oakville', 'Oakhaven', 'Parkway Village'],
+                    labels = ["Neighborhoods"],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    to = grades[i + 1];
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_neighborhoodsVar(from) + '"></i> ' + from);
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('neighborhoodsVar').onclick = function() {
+                if (this.className === 'active') {
+                    neighborhoodsLegend.removeFrom(map);
+                    neighborhoodsInfo.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    neighborhoodsLegend.addTo(map);
+                    neighborhoodsInfo.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+                //Lamar Area Freight Facilities
+                var lamarAreaFreightFacilitiesVar = L.geoJson(null, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, {
+                            icon: L.icon({
+                                iconUrl: "img/freight_16px.png",
+                                iconSize: [16, 16],
+                                iconAnchor: [8, 8],
+                                popupAnchor: [0, -25], 
+                                opacity: 0.5
+                            }),
+                            
+                            riseOnHover: true
+                        });
+                    },
+                    onEachFeature: function (feature, layer) {
+                    }
+                   
+                });
+                $.getJSON("data/lamarAreaFreightFacilities.js", function (data) {
+                    lamarAreaFreightFacilitiesVar.addData(data);
+                });
+
+                //Public Warehouses
+                var publicWarehousesVar = L.geoJson(null, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, {
+                            icon: L.icon({
+                                iconUrl: "img/publicWarehouse_46px.png",
+                                iconSize: [46, 46],
+                                iconAnchor: [23, 23],
+                                popupAnchor: [0, -25], 
+                                opacity: 0.5
+                            }),
+                            
+                            riseOnHover: true
+                        });
+                    },
+                    onEachFeature: function (feature, layer) {
+                    }
+                });
+                $.getJSON("data/publicWarehouses.js", function (data) {
+                    publicWarehousesVar.addData(data);
+                });
+
+                //Warehouses
+                var warehousesVar = L.geoJson(null, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, {
+                            icon: L.icon({
+                                iconUrl: "img/warehouse_30px.png",
+                                iconSize: [30, 30],
+                                iconAnchor: [15, 15],
+                                popupAnchor: [0, -25], 
+                                opacity: 0.5
+                            }),
+                            
+                            riseOnHover: true
+                        });
+                    },
+                    onEachFeature: function (feature, layer) {
+                    }
+                   
+                });
+                $.getJSON("data/warehouses.js", function (data) {
+                    warehousesVar.addData(data);
+                });
+
+                //Distribution Centers
+                var distributionCentersVar = L.geoJson(null, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, {
+                            icon: L.icon({
+                                iconUrl: "img/distributionCenter_30px.png",
+                                iconSize: [30, 30],
+                                iconAnchor: [15, 15],
+                                popupAnchor: [0, -25], 
+                                opacity: 0.5
+                            }),
+                            
+                            riseOnHover: true
+                        });
+                    },
+                    onEachFeature: function (feature, layer) {
+                    }
+                   
+                });
+                $.getJSON("data/distributionCenters.js", function (data) {
+                    distributionCentersVar.addData(data);
+                });
+
+                //Freight Facilities
+                var freightFacilitiesVar = L.geoJson(null, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, {
+                            icon: L.icon({
+                                iconUrl: "img/freight_24px.png",
+                                iconSize: [24, 24],
+                                iconAnchor: [12, 12],
+                                popupAnchor: [0, -25], 
+                                opacity: 0.5
+                            }),
+                            
+                            riseOnHover: true
+                        });
+                    },
+                    onEachFeature: function (feature, layer) {
+                    }
+                   
+                });
+                $.getJSON("data/freightFacilities.js", function (data) {
+                    freightFacilitiesVar.addData(data);
+                });
+
+                //Truck Terminals
+                var truckTerminalsVar = L.geoJson(null, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, {
+                            icon: L.icon({
+                                iconUrl: "img/truckFrontView_30px.png",
+                                iconSize: [30, 30],
+                                iconAnchor: [15, 15],
+                                popupAnchor: [0, -25], 
+                                opacity: 0.5
+                            }),
+                            
+                            riseOnHover: true
+                        });
+                    },
+                    onEachFeature: function (feature, layer) {
+                    }
+                   
+                });
+                $.getJSON("data/truckTerminals.js", function (data) {
+                    truckTerminalsVar.addData(data);
+                });
+
+                //Intermodal Terminals
+                var intermodalTerminalsVar = L.geoJson(null, {
+                    pointToLayer: function (feature, latlng) {
+                        return L.marker(latlng, {
+                            icon: L.icon({
+                                iconUrl: "img/intermodalTerminal_40px.png",
+                                iconSize: [40, 40],
+                                iconAnchor: [20, 20],
+                                popupAnchor: [0, -25], 
+                                opacity: 0.5
+                            }),
+                            
+                            riseOnHover: true
+                        });
+                    },
+                    onEachFeature: function (feature, layer) {
+                    }
+                   
+                });
+                $.getJSON("data/intermodalTerminals.js", function (data) {
+                    intermodalTerminalsVar.addData(data);
+                });                                                                            
+
+            //Proposed Intermodal Yard
+            var proposedIntermodalYardVar = L.geoJson(proposedIntermodalYard, {
+                style: proposedIntermodalYardStyle,
+                onEachFeature: onEachFeature_proposedIntermodalYardVar,
+                layer: "bikeScore"
+            });
+
+            function proposedIntermodalYardStyle(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: '#451700',
+                    dashArray: '3',
+                    fillOpacity: 0.9,
+                    fillColor: '#451700'
+                };
+            }
+
+            function onEachFeature_proposedIntermodalYardVar(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_proposedIntermodalYardVar,
+                    mouseout: resetHighlight_proposedIntermodalYardVar,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_proposedIntermodalYardVar(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0.7
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                proposedIntermodalYardInfo.update(layer.feature.properties);  
+            }
+
+            function resetHighlight_proposedIntermodalYardVar(e) {
+
+                proposedIntermodalYardVar.resetStyle(e.target);
+                proposedIntermodalYardInfo.update();
+            }            
+
+            // control that shows state info on hover
+            var proposedIntermodalYardInfo = L.control({position: 'bottomleft'});
+
+            proposedIntermodalYardInfo.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'Neighborhoods');
+                this.update();
+                return this._div;
+            };
+
+            proposedIntermodalYardInfo.update = function (props) {
+                this._div.innerHTML = '<h4>Proposed Intermodal Yard</h4>' +  (props ?
+                    '<b>' + "(No Information to Display)" + '</b><br />'
+                    : '(Site is East of Lamar Ave, by Collierville)');
+            };
+
+            //legend
+            var proposedIntermodalYardLegend = L.control({position: 'bottomright'});
+
+            proposedIntermodalYardLegend.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    grades = ["Proposed Site"],
+                    labels = [],
+                    from, to;
+
+                for (var i = 0; i < grades.length; i++) {
+                    from = grades[i];
+                    to = grades[i + 1];
+
+                    labels.push(
+                        '<i style="background:' + '#1240ab' + '"></i> ' +
+                        from);
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('proposedIntermodalYardVar').onclick = function() {
+                if (this.className === 'active') {
+                    proposedIntermodalYardLegend.removeFrom(map);
+                    proposedIntermodalYardInfo.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    proposedIntermodalYardLegend.addTo(map);
+                    proposedIntermodalYardInfo.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }                                                           
+
+//Shelby County 2013 Census Tracts=============================================
+            /////-----------------------------------------------------------------
+            /////Shelby County 2013 Census Tracts----------------
+            /////-----------------------------------------------------------------
+            var censusTractsVar = L.geoJson(shelbyCounty2013CensusTracts, {
+                style: censusTractsStyle,
+                onEachFeature: onEachFeature_censusTractsVar
+            });
+
+            function censusTractsStyle(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'black',
+                    dashArray: '3',
+                    fillOpacity: 0,
+                    fillColor: '#fff'
+                };
+            }
+
+            function onEachFeature_censusTractsVar(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_censusTractsVar,
+                    mouseout: resetHighlight_censusTractsVar,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_censusTractsVar(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                censusTractsInfo.update(layer.feature.properties);  
+            }
+
+            function resetHighlight_censusTractsVar(e) {
+                censusTractsVar.resetStyle(e.target);
+                censusTractsInfo.update();
+            }            
+
+            // control that shows state info on hover
+            var censusTractsInfo = L.control({position: 'bottomleft'});
+
+            censusTractsInfo.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'Neighborhoods');
+                this.update();
+                return this._div;
+            };
+
+            censusTractsInfo.update = function (props) {
+                this._div.innerHTML = '<h4>Census Tracts</h4>' +  (props ?
+                    '<b>' + props.NAMELSAD + '</b><br />'
+                    : 'Hover over a tract');
+            };
+
+            document.getElementById('censusTractsVar').onclick = function() {
+                if (this.className === 'active') {
+                    censusTractsInfo.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    censusTractsInfo.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+//Transportation=============================================
+            /////-----------------------------------------------------------------
+            /////NTAD 2013 Data----------------
+            /////-----------------------------------------------------------------
+            //Rail Lines
+            var railLinesVar = L.geoJson(railLines, {
+                style: railLinesStyle,
+                onEachFeature: onEachFeature_railLinesVar
+            });
+
+            function railLinesStyle(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: 'black',
+                    dashArray: '3',
+                    fillOpacity: 0,
+                    fillColor: '#fff'
+                };
+            }
+
+            function onEachFeature_railLinesVar(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_railLinesVar,
+                    mouseout: resetHighlight_railLinesVar,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_railLinesVar(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                railLinesInfo.update(layer.feature.properties);  
+            }
+
+            function resetHighlight_railLinesVar(e) {
+
+                railLinesVar.resetStyle(e.target);
+                railLinesInfo.update();
+            }            
+
+            // control that shows state info on hover
+            var railLinesInfo = L.control({position: 'bottomleft'});
+
+            railLinesInfo.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'Neighborhoods');
+                this.update();
+                return this._div;
+            };
+
+            function isRRowner2(prop){
+            	console.log("this is the prop: " + prop);
+            	if (prop == null){
+            		return "";
+            	} else {
+            		return ", " + prop;
+            	}
+            }
+
+            railLinesInfo.update = function (props) {
+                this._div.innerHTML = '<h4>Rail Lines: Owner(s)</h4>' +  (props ?
+                    '<b>' + props.RROWNER1 + isRRowner2(props.RROWNER2) + '</b>' : 'Hover over a rail line');
+            };
+
+            document.getElementById('railLinesVar').onclick = function() {
+                if (this.className === 'active') {
+                    railLinesInfo.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    railLinesInfo.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }
+
+            //HPMS 2013 Roads ---------------------------------------
+            var HPMSRoadsVar = L.geoJson(HPMS_Roads_ShelbyCounty, {
+                style: HPMSRoadsStyle,
+                onEachFeature: onEachFeature_HPMSRoadsVar
+            });
+
+            function HPMSRoadsStyle(feature) {
+                return {
+                    weight: 2,
+                    opacity: 1,
+                    color: myGetColor_HPMSRoadsVar(feature.properties.AADT),
+                    dashArray: '3',
+                    fillOpacity: 0,
+                };
+            }
+
+            function onEachFeature_HPMSRoadsVar(feature, layer) {
+                layer.on({
+                    mouseover: highlightFeature_HPMSRoadsVar,
+                    mouseout: resetHighlight_HPMSRoadsVar,
+                    click: zoomToFeature
+                });
+            }
+
+            function highlightFeature_HPMSRoadsVar(e) {
+                var layer = e.target;
+
+                layer.setStyle({
+                    weight: 5,
+                    color: '#f00',
+                    dashArray: '',
+                    fillOpacity: 0
+                });
+
+                if (!L.Browser.ie && !L.Browser.opera) {
+                    layer.bringToFront();
+                }
+                
+                HPMSRoadsInfo.update(layer.feature.properties);  
+            }
+
+            function resetHighlight_HPMSRoadsVar(e) {
+                HPMSRoadsVar.resetStyle(e.target);
+                HPMSRoadsInfo.update();
+            }
+
+            function myGetColor_HPMSRoadsVar(d) {
+                return d > 45850 ? '#a50026' :
+                       d > 27560  ? '#cb181d' :
+                       d > 20400  ? '#f46d43' :
+                       d > 14590  ? '#fee08b' :
+                       d > 9760  ? '#ffffbf' :
+                       d > 5071  ? '#80cdc1' :                       
+                                 '#01665e';
+            }                       
+
+            // control that shows state info on hover
+            var HPMSRoadsInfo = L.control({position: 'bottomleft'});
+
+            HPMSRoadsInfo.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'Neighborhoods');
+                this.update();
+                return this._div;
+            };
+
+            HPMSRoadsInfo.update = function (props) {
+                this._div.innerHTML = '<h4>Roads: Annual Average Daily Traffic</h4>' +  (props ?
+                    '<b>' + props.AADT + '</b><br />'
+                    : 'Hover over a road');
+            };
+
+            var HPMSRoadsLegend = L.control({position: 'bottomright'});
+
+            HPMSRoadsLegend.onAdd = function (map) {
+
+                var div = L.DomUtil.create('div', 'info legend'),
+                    colorGrades = [45850, 27560, 20400, 14590, 9760, 5071, 0],
+                    labels = ["Roads: Annual Average Daily Traffic"],
+                    from, to;
+
+                for (var i = 0; i < colorGrades.length; i++) {
+                    from = colorGrades[i];
+                    to = (colorGrades[i - 1] - 1);
+
+                    labels.push(
+                        '<i style="background:' + myGetColor_HPMSRoadsVar(from + 1) + '"></i> ' +
+                        from + (to ? '&ndash;' + to : '+'));
+                }
+
+                div.innerHTML = labels.join('<br>');
+                return div;
+            };
+
+            document.getElementById('HPMSRoadsVar').onclick = function() {
+                if (this.className === 'active') {
+                    HPMSRoadsLegend.removeFrom(map);
+                    HPMSRoadsInfo.removeFrom(map); 
+                    
+                    this.className = '';
+                } else {
+                    HPMSRoadsLegend.addTo(map);
+                    HPMSRoadsInfo.addTo(map);
+                    
+                    this.className = 'active';
+                    }
+                }                          
+
+//===========================================================================
+            //Maps
+                              
+            var imageUrl2 = 'data/memphis-mai-geo2.jpg',
+			imageBounds2 = [[35.0454088,-90.1457564], [35.2232353,-89.8214767]];
+			var histMap = new L.imageOverlay(imageUrl2, imageBounds2); 
+
+			var imageUrl3 = 'data/memphis19222.jpg',
+			imageBounds3 = [[35.0827598,-90.0882017], [35.1741897,-89.9436465]];
+			var histMap2 = new L.imageOverlay(imageUrl3, imageBounds3);        
+			
+			var imageUrl4 = 'data/memphis-mai-geo-5.jpg',
+			imageBounds4 = [[35.0825584,-90.1097809], [35.2091090,-89.9812029]];
+			var histMap3 = new L.imageOverlay(imageUrl4, imageBounds4);  
+			
+			var imageUrl5 = 'data/memphis-mai-geo-5.jpg',
+			imageBounds5 = [[35.0825584,-90.1097809], [35.2091090,-89.9812029]];
+			var histMap4 = new L.imageOverlay(imageUrl5, imageBounds5);  
+			
+			var imageUrl7 = 'data/noiseMap.jpg',
+			imageBounds7 = [[34.9695283,-90.0360770], [35.1288098,-89.8997338]];		
+			var noiseMap = new L.imageOverlay(imageUrl7, imageBounds7);      
+			
+			var imageUrl8 = 'data/noiseMap2.jpg',			
+			imageBounds8 = [[34.9712526,-90.0570429], [35.1056856,-89.8122187]];
+			var roadNoiseMap = new L.imageOverlay(imageUrl8, imageBounds8); 
+				
+			var imageUrl10 = 'data/memphis1936.jpg',
+			imageBounds10 = [[35.0544923,-90.1409757], [35.2219070,-89.8800621]];
+			var histMap5 = new L.imageOverlay(imageUrl10, imageBounds10);
+
+//=========================================================================
+
+			
+            var layerControl = L.control.layers(baseLayers, {
+                
+            }).addTo(map);
+			
+            // Larger screens get expanded layer control
+            if (document.body.clientWidth <= 767) {
+                var isCollapsed = true;
+            } else {
+                var isCollapsed = false;
+            };
+
+            $("#navbar-collapse").on("shown.bs.collapse", function () {
+                $(".navbar-collapse.in").css("max-height", $(document).height()-$(".navbar-header").height());
+                $(".navbar-collapse.in").css("height", $(document).height()-$(".navbar-header").height());
+            });
+
+            // Placeholder hack for IE
+            if (navigator.appName == "Microsoft Internet Explorer") {
+                $("input").each( function () {
+                    if ($(this).val() == "" && $(this).attr("placeholder") != "") {
+                        $(this).val($(this).attr("placeholder"));
+                        $(this).focus(function () {
+                            if ($(this).val() == $(this).attr("placeholder")) $(this).val("");
+                        });
+                        $(this).blur(function () {
+                            if ($(this).val() == "") $(this).val($(this).attr("placeholder"));
+                        });
+                    }
+                });
+            }
+            
+            function uncheckAll(){ 
+		  var w = document.getElementsByTagName('input'); 
+		  for(var i = 0; i < w.length; i++){ 
+			if(w[i].type=='checkbox'){ 
+			  w[i].checked = false; 
+			}
+		  }
+		}
+		$(':checkbox:checked').removeAttr('checked');
+        </script>
+    </body>
+</html>

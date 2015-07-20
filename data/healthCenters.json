@@ -1,0 +1,1041 @@
+{
+  "type": "FeatureCollection", 
+  "features": [
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.19540303134882, 
+          35.21016374031179
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Marion", 
+        "Health_Cen": "2921 Arkansas 77", 
+        "Match_type": "M", 
+        "Name": "Marion Pediatrics", 
+        "ARC_City": "MARION", 
+        "ARC_ZIP": "72364", 
+        "ARC_Zone": null, 
+        "County": "Crittenden", 
+        "State": "AR", 
+        "Score": 86, 
+        "ARC_State": "AR", 
+        "ARC_Street": "2921 AR 77", 
+        "Match_addr": "2921 AR 77 HWY, MARION, AR, 72364", 
+        "Side": "R", 
+        "Zip_Code": 72364.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.18306987397033, 
+          35.14785258430109
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "West Memphis", 
+        "Health_Cen": "215 E Bond Ave", 
+        "Match_type": "A", 
+        "Name": "East Arkansas Family Health Center", 
+        "ARC_City": "West Memphis", 
+        "ARC_ZIP": "72301", 
+        "ARC_Zone": null, 
+        "County": "Crittenden", 
+        "State": "AR", 
+        "Score": 100, 
+        "ARC_State": "AR", 
+        "ARC_Street": "215 E Bond Ave", 
+        "Match_addr": "215 E BOND AVE, WEST MEMPHIS, AR, 72301", 
+        "Side": "R", 
+        "Zip_Code": 72301.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.19169439019002, 
+          35.14404146324682
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "West Memphis", 
+        "Health_Cen": "318 W Tyler Ave", 
+        "Match_type": "A", 
+        "Name": "Crittenden Regional Hospital", 
+        "ARC_City": "West Memphis", 
+        "ARC_ZIP": "72301", 
+        "ARC_Zone": null, 
+        "County": "Crittenden", 
+        "State": "AR", 
+        "Score": 100, 
+        "ARC_State": "AR", 
+        "ARC_Street": "318 W Tyler Ave", 
+        "Match_addr": "318 W TYLER AVE, WEST MEMPHIS, AR, 72301", 
+        "Side": "L", 
+        "Zip_Code": 72301.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.187609474547, 
+          35.149203864575185
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "West Memphis", 
+        "Health_Cen": "206 N Rhodes St", 
+        "Match_type": "A", 
+        "Name": "White River Rural Health Care Center", 
+        "ARC_City": "West Memphis", 
+        "ARC_ZIP": "72301", 
+        "ARC_Zone": null, 
+        "County": "Crittenden", 
+        "State": "AR", 
+        "Score": 100, 
+        "ARC_State": "AR", 
+        "ARC_Street": "206 N Rhodes St", 
+        "Match_addr": "206 N RHODES ST, WEST MEMPHIS, AR, 72301", 
+        "Side": "L", 
+        "Zip_Code": 72301.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.67433508447483, 
+          35.29121615200037
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Arlington", 
+        "Health_Cen": "6050 Airline Rd # 109", 
+        "Match_type": "A", 
+        "Name": "Faith Family Medical Service", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38002", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "6050 Airline Rd # 109", 
+        "Match_addr": "6050 AIRLINE RD, 38002", 
+        "Side": "R", 
+        "Zip_Code": 38002.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.81585297670003, 
+          35.20470227928485
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Bartlett", 
+        "Health_Cen": "7424 U.S. 64", 
+        "Match_type": "M", 
+        "Name": "Baptist Minor Medical Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38133", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "7424 STAGE RD", 
+        "Match_addr": "7424 STAGE RD, 38133", 
+        "Side": "L", 
+        "Zip_Code": 38133.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.79651219117397, 
+          35.20267481990535
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Bartlett", 
+        "Health_Cen": "7865 Educators Ln", 
+        "Match_type": "A", 
+        "Name": "Lunceford Family Health Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38133", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 63, 
+        "ARC_State": null, 
+        "ARC_Street": "7865 Educators Ln", 
+        "Match_addr": "7901 EDUCATORS LN, 38133", 
+        "Side": "L", 
+        "Zip_Code": 38133.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.71217564969558, 
+          35.04725051993505
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "T", 
+        "City": "Collierville", 
+        "Health_Cen": "1500 W Poplar Ave", 
+        "Match_type": "A", 
+        "Name": "Baptist Memorial Hospital", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38017", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 63, 
+        "ARC_State": null, 
+        "ARC_Street": "1500 W Poplar Ave", 
+        "Match_addr": "1498 W POPLAR AVE, 38017", 
+        "Side": "L", 
+        "Zip_Code": 38017.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.69806415782688, 
+          35.03958883911672
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Collierville", 
+        "Health_Cen": "155 Crescent Dr #102", 
+        "Match_type": "A", 
+        "Name": "Fresenius Medical Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38017", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 81, 
+        "ARC_State": null, 
+        "ARC_Street": "155 Crescent Dr #102", 
+        "Match_addr": "155 CRESCENT ST, 38017", 
+        "Side": "R", 
+        "Zip_Code": 38017.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.73246017243824, 
+          35.05157032019269
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Collierville", 
+        "Health_Cen": "3680 S Houston Levee Rd", 
+        "Match_type": "A", 
+        "Name": "Collierville Urgent Care Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38017", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "3680 S Houston Levee Rd", 
+        "Match_addr": "3680 S HOUSTON LEVEE RD, 38017", 
+        "Side": "L", 
+        "Zip_Code": 38017.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.67724763586978, 
+          35.04581513531834
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Collierville", 
+        "Health_Cen": "472 W Poplar Ave #101", 
+        "Match_type": "A", 
+        "Name": "First Choice Care", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38017", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "472 W Poplar Ave #101", 
+        "Match_addr": "472 W POPLAR AVE, 38017", 
+        "Side": "R", 
+        "Zip_Code": 38017.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.80678464408464, 
+          35.091750026933724
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Germantown", 
+        "Health_Cen": "7691 Poplar Ave", 
+        "Match_type": "A", 
+        "Name": "Methodist Le Bohneur", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38138", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "7691 Poplar Ave", 
+        "Match_addr": "7691 POPLAR AVE, 38138", 
+        "Side": "R", 
+        "Zip_Code": 38138.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.8084457446495, 
+          35.09349045359163
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Germantown", 
+        "Health_Cen": "2018 S Germantown Rd", 
+        "Match_type": "A", 
+        "Name": "Germantown Minor Medical", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38138", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "2018 S Germantown Rd", 
+        "Match_addr": "2018 S GERMANTOWN RD, 38138", 
+        "Side": "L", 
+        "Zip_Code": 38138.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.79783788683386, 
+          35.11183980118367
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Germantown", 
+        "Health_Cen": "7945 Wolf River Blvd", 
+        "Match_type": "A", 
+        "Name": "UT Medical Group", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38138", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "7945 Wolf River Blvd", 
+        "Match_addr": "7945 WOLF RIVER BLVD, 38138", 
+        "Side": "L", 
+        "Zip_Code": 38138.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.80208519936971, 
+          35.094739510000835
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Germantown", 
+        "Health_Cen": "2002 Exeter Rd", 
+        "Match_type": "A", 
+        "Name": "Pediatrics East", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38138", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "2002 Exeter Rd", 
+        "Match_addr": "2002 EXETER RD, 38138", 
+        "Side": "L", 
+        "Zip_Code": 38138.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.73357663460635, 
+          35.21307935953099
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Lakeland", 
+        "Health_Cen": "2961 Canada Rd #105", 
+        "Match_type": "A", 
+        "Name": "Lakeland Family Medical", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38002", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "2961 Canada Rd #105", 
+        "Match_addr": "2961 CANADA RD, 38002", 
+        "Side": "L", 
+        "Zip_Code": 38002.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.04995714950223, 
+          35.12444719420672
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "T", 
+        "City": "Memphis", 
+        "Health_Cen": "360 E Eh Crump Blvd", 
+        "Match_type": "A", 
+        "Name": "Memphis Health Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38126", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 88, 
+        "ARC_State": null, 
+        "ARC_Street": "360 E Eh Crump Blvd", 
+        "Match_addr": "360 E E H CRUMP BLVD, 38126", 
+        "Side": "L", 
+        "Zip_Code": 38126.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.0217966567574, 
+          35.13276408141021
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "1196 Peabody Ave", 
+        "Match_type": "A", 
+        "Name": "Church Health Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38104", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "1196 Peabody Ave", 
+        "Match_addr": "1196 PEABODY AVE, 38104", 
+        "Side": "L", 
+        "Zip_Code": 38104.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.96585306749292, 
+          35.14743911521621
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "2861 Broad Ave", 
+        "Match_type": "A", 
+        "Name": "Christ Community Health Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38112", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "2861 Broad Ave", 
+        "Match_addr": "2861 BROAD AVE, 38112", 
+        "Side": "R", 
+        "Zip_Code": 38112.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.97664619326376, 
+          35.110393476411694
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "2569 Douglass Ave", 
+        "Match_type": "A", 
+        "Name": "Christ Community Health Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38114", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "2569 Douglass Ave", 
+        "Match_addr": "2569 DOUGLASS AVE, 38114", 
+        "Side": "R", 
+        "Zip_Code": 38114.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.03231291497364, 
+          35.14350470388391
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "848 Adams Ave", 
+        "Match_type": "A", 
+        "Name": "Le Bonhuer Children's Hospital", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38103", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 64, 
+        "ARC_State": null, 
+        "ARC_Street": "848 Adams Ave", 
+        "Match_addr": "849 ADAMS AVE, 38103", 
+        "Side": "L", 
+        "Zip_Code": 38103.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.02584283813498, 
+          35.13775393233544
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "1115 Union Ave", 
+        "Match_type": "A", 
+        "Name": "Church Health Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38104", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "1115 Union Ave", 
+        "Match_addr": "1115 UNION AVE, 38104", 
+        "Side": "R", 
+        "Zip_Code": 38104.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.0251730480811, 
+          35.14248348835848
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "1030 Jefferson Ave", 
+        "Match_type": "PP", 
+        "Name": "VA Medical Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38103", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "1030 JEFFERSON AVE", 
+        "Match_addr": null, 
+        "Side": null, 
+        "Zip_Code": 38103.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.03090950902158, 
+          35.14265930070852
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "877 Jefferson Ave", 
+        "Match_type": "A", 
+        "Name": "The Med", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38103", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 63, 
+        "ARC_State": null, 
+        "ARC_Street": "877 Jefferson Ave", 
+        "Match_addr": "851 JEFFERSON AVE, 38103", 
+        "Side": "R", 
+        "Zip_Code": 38103.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.86591106984976, 
+          35.13425531015199
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "100 N Humphreys Blvd", 
+        "Match_type": "A", 
+        "Name": "The West Clinic", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38120", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "100 N Humphreys Blvd", 
+        "Match_addr": "100 N HUMPHREYS BLVD, 38120", 
+        "Side": "L", 
+        "Zip_Code": 38120.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.01851483380754, 
+          35.13702605327186
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "1265 Union Ave", 
+        "Match_type": "A", 
+        "Name": "Methodist Le Bohneur Health Care", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38104", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "1265 Union Ave", 
+        "Match_addr": "1265 UNION AVE, 38104", 
+        "Side": "R", 
+        "Zip_Code": 38104.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.8627567583309, 
+          35.09997854102724
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "5959 Park Ave", 
+        "Match_type": "A", 
+        "Name": "Saint Francis Hospital", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38119", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "5959 Park Ave", 
+        "Match_addr": "5959 PARK AVE, 38119", 
+        "Side": "R", 
+        "Zip_Code": 38119.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.88464061198965, 
+          35.05050891563024
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "5366 Winchester Rd", 
+        "Match_type": "A", 
+        "Name": "Christ Community Health Services", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38115", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "5366 Winchester Rd", 
+        "Match_addr": "5366 WINCHESTER RD, 38118", 
+        "Side": "L", 
+        "Zip_Code": 38115.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.8544669632477, 
+          35.1288317609727
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "6225 Humphreys Blvd", 
+        "Match_type": "A", 
+        "Name": "Baptist Memorial Hospital", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38120", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "6225 Humphreys Blvd", 
+        "Match_addr": "6225 HUMPHREYS BLVD, 38120", 
+        "Side": "L", 
+        "Zip_Code": 38120.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.02262197043235, 
+          35.032379999973855
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "1300 Wesley Dr", 
+        "Match_type": "A", 
+        "Name": "Methodist Hospital south", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38116", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "1300 Wesley Dr", 
+        "Match_addr": "1300 WESLEY DR, 38116", 
+        "Side": "L", 
+        "Zip_Code": 38116.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.00145455020602, 
+          35.1353233501955
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "1803 Union Avenue #2", 
+        "Match_type": "A", 
+        "Name": "Methodist Minor Medical Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38104", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "1803 Union Avenue #2", 
+        "Match_addr": "1803 UNION AVE, 38104", 
+        "Side": "R", 
+        "Zip_Code": 38104.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.79546224872526, 
+          35.048323582535005
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "8071 Winchester Road", 
+        "Match_type": "A", 
+        "Name": "Methodist Minor Medical Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38115", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "8071 Winchester Road", 
+        "Match_addr": "8071 WINCHESTER RD, 38115", 
+        "Side": "R", 
+        "Zip_Code": 38115.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -90.02720728372704, 
+          35.027046318718945
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Memphis", 
+        "Health_Cen": "1129 Hale Rd", 
+        "Match_type": "A", 
+        "Name": "Memphis Children's Clinic", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38116", 
+        "County": "Shelby", 
+        "State": "TN", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "1129 Hale Rd", 
+        "Match_addr": "1129 HALE RD, 38116", 
+        "Side": "R", 
+        "Zip_Code": 38116.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.82895826629237, 
+          34.9474467290467
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Olive Branch", 
+        "Health_Cen": "9075 Sandidge Center Cove", 
+        "Match_type": "M", 
+        "Name": "Olive Branch Family Medical Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38654", 
+        "County": "Desoto", 
+        "State": "MS", 
+        "Score": 81, 
+        "ARC_State": null, 
+        "ARC_Street": "9075 E SANDIDGE", 
+        "Match_addr": "9075 E SANDIDGE CV, 38654", 
+        "Side": "L", 
+        "Zip_Code": 38654.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.8306306868127, 
+          34.990343426020615
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Olive Branch", 
+        "Health_Cen": "8990 Germantown Rd", 
+        "Match_type": "M", 
+        "Name": "Baptist Minor Medical Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38654", 
+        "County": "Desoto", 
+        "State": "MS", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "8990 HWY 305", 
+        "Match_addr": "8990 HWY 305, 38654", 
+        "Side": "L", 
+        "Zip_Code": 38654.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.89246556005256, 
+          34.96229228585262
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Olive Branch", 
+        "Health_Cen": "5480 Goodman Rd", 
+        "Match_type": "A", 
+        "Name": "Methodist Minor Medical Center", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38654", 
+        "County": "Desoto", 
+        "State": "MS", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "5480 Goodman Rd", 
+        "Match_addr": "5480 GOODMAN RD, 38654", 
+        "Side": "R", 
+        "Zip_Code": 38654.0
+      }
+    }, 
+    {
+      "geometry": {
+        "type": "Point", 
+        "coordinates": [
+          -89.99304540264444, 
+          34.96266704234481
+        ]
+      }, 
+      "type": "Feature", 
+      "properties": {
+        "Status": "M", 
+        "City": "Southaven", 
+        "Health_Cen": "176 W Goodman Rd", 
+        "Match_type": "M", 
+        "Name": "Urgent Medical Clinic", 
+        "ARC_City": null, 
+        "ARC_ZIP": null, 
+        "ARC_Zone": "38671", 
+        "County": "Desoto", 
+        "State": "MS", 
+        "Score": 100, 
+        "ARC_State": null, 
+        "ARC_Street": "176 HWY 302", 
+        "Match_addr": "176 HWY 302", 
+        "Side": "L", 
+        "Zip_Code": 38671.0
+      }
+    }
+  ]
+}
